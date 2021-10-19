@@ -1,11 +1,10 @@
 # depslib dependency file v1.0
-1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
+1634669419 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
+	"AccessoryMethods.h"
 
 1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\balancesheet.cpp
 
-1634639714 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.cpp
-	<iostream>
-	"AccessoryMethods.h"
+1634640613 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.cpp
 
 1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expense.cpp
 
@@ -25,7 +24,7 @@
 
 1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\incomesmanager.cpp
 
-1634596531 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
+1634669506 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
 	<time.h>
 	<conio.h>
 	<iostream>
@@ -33,6 +32,7 @@
 	"XMLFileWithUsers.h"
 	"User.h"
 	"XMLFileWithExpenses.h"
+	"AccessoryMethods.h"
 
 1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
 
@@ -108,5 +108,9 @@
 	<string>
 	<vector>
 
-1632223730 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.h
+1634669403 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.h
+	<iostream>
+	<sstream>
+	<string>
+	<cctype>
 
