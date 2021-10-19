@@ -1,0 +1,9 @@
+<Expenses>
+<Expense>
+<ExpenseId>1</ExpenseId>
+<UserId>11</UserId>
+<Date>20180201</Date>
+<Item>samochod</Item>
+<Amount>5000</Amount>
+</Expense>
+</Expenses>
