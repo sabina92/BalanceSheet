@@ -1,30 +1,26 @@
 #include "AccessoryMethods.h"
 
-string AccessoryMethods::changePointToComa()
-{
 
+ void AccessoryMethods::askTheCustomer(string option)
+{
+    cout << "Please, write the " << option << endl;
 }
 
-
- int AccessoryMethods::changeCommaToPoint(int amountWithComma)
+ void AccessoryMethods::showAllVectorElements(vector <Finance> allElements)
 {
-
+    for (int k=0; k< allElements.size(); k++)
+    {
+        cout << allElements[k].getDate() << '-' << allElements[k].getItem() << '-' << allElements[k].getAmount() << endl;
+    }
 }
- string AccessoryMethods::askTheCustomerAboutItem()
+ int AccessoryMethods::calculateTheSum(vector <Finance> allElements)
 {
-
-}
- int AccessoryMethods::askTheCustomerAboutAmount()
-{
-
-}
- void AccessoryMethods::showAllVectorElements()
-{
-
-}
- int AccessoryMethods::calculateTheSum()
-{
-
+    int suma;
+    for (int l=0; l< allElements.size(); l++)
+    {
+        suma += convertStringToInt(allElements[l].getAmount());
+    }
+    return suma;
 }
  int AccessoryMethods::calculateTheDifference()
 {
@@ -74,4 +70,14 @@ string AccessoryMethods::changePointToComa()
 
     numberWithDash = firstPartOfString + '-' + secondPartOfString + '-' + thirdPartOfString;
     return numberWithDash;
+}
+
+string AccessoryMethods::changePointToComa(string amount)
+{
+    for (int j = 0; j < amount.size(); j++)
+    {
+        if (amount[j] == ',')
+            amount[j] = '.';
+    }
+    return amount;
 }

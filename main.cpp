@@ -50,8 +50,10 @@ int main() {
 //        cout << i << expenses[i].getDate() << endl;
 //    }
 
-    int number1 = 20180202;
-    cout << endl << AccessoryMethods::convertIntToStringWithDash(number1) << endl;
+//    int number1 = 20180202;
+//    cout << endl << AccessoryMethods::convertIntToStringWithDash(number1) << endl;
+
+cout << AccessoryMethods::changePointToComa("12,12") << endl;
 
     return 0;
 }
