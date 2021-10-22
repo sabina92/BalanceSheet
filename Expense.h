@@ -13,7 +13,7 @@ class Expense : public Finance
     int expenseUserId;
     int expenseDate;
     string expenseItem;
-    int expenseAmount;
+    string expenseAmount;
 
 public:
 

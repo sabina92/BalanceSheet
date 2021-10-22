@@ -53,7 +53,7 @@ vector <Expense> XMLFileWithExpense::loadExpenses()
         expense.setItem(strExpenseItem);
         xmlFileExpense.FindElem("Amount");
         MCD_STR strExpenseAmount= xmlFileExpense.GetData();
-        expense.setAmount(atoi(MCD_2PCSZ(strExpenseAmount)));
+        expense.setAmount(strExpenseAmount);
 
         xmlFileExpense.OutOfElem();
 

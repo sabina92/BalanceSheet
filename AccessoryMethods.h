@@ -2,8 +2,12 @@
 #define ACCESSORYMETHODS_H
 
 #include <iostream>
-#include "AccessoryMethods.h"
-
+#include <sstream>
+#include <string>
+#include <cctype>
+#include <locale>
+#include <vector>
+#include "Finance.h"
 
 using namespace std;
 
@@ -12,15 +16,14 @@ class AccessoryMethods{
 
 public:
 
-static string changePointToComa();
-static void changeCommaToPoint();
-_+ askTheCustomerAboutItem(): string_
-_+ askTheCustomerAboutAmount(): int_
-_+ showAllVectorElements() : void_
-_+ calculateTheSum() : int _
-_+ calculateTheDifference() : int_
-_+ convertIntToStringWithDash() : string_
-_+ convertStringToInt() : int_
+static string changePointToComa(string amount);
+static void askTheCustomer(string option);
+static void showAllVectorElements(vector <Finance> allElements);
+static int calculateTheSum(vector <Finance> allElements);
+static int calculateTheDifference(int firstSum, int secondSum);
+static string convertIntToStringWithDash(int number);
+static string convertIntToString(int number);
+static int convertStringToInt(string number);
 
 
 };
