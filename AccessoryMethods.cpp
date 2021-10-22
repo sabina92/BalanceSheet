@@ -22,9 +22,10 @@
     }
     return suma;
 }
- int AccessoryMethods::calculateTheDifference()
+ int AccessoryMethods::calculateTheDifference(int firstSum, int secondSum)
 {
-
+    int difference;
+    return difference = firstSum - secondSum;
 }
 
  string AccessoryMethods::convertIntToString(int number)
