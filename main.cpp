@@ -65,5 +65,7 @@ cout << AccessoryMethods::changePointToComa("12,12") << endl;
 Date date;
 cout << date.retrieveActualDate() << endl;
 cout << date.retrievePreviousMonth() << endl;
+cout << date.checkIfDateIsCorrect(19000228) << endl;
+cout << date.compareDates(19000505,19000506) << endl;
     return 0;
 }

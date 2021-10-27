@@ -4,7 +4,7 @@
 
 1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\balancesheet.cpp
 
-1635240442 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.cpp
+1635369540 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.cpp
 	"Date.h"
 
 1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expense.cpp
@@ -25,7 +25,7 @@
 
 1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\incomesmanager.cpp
 
-1635167606 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
+1635369329 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
 	<time.h>
 	<conio.h>
 	<iostream>
@@ -119,7 +119,7 @@
 	<vector>
 	"Finance.h"
 
-1635240453 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.h
+1635369277 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.h
 	<iostream>
 	<string>
 	<time.h>
