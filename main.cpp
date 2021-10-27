@@ -6,27 +6,33 @@
 #include "User.h"
 #include "XMLFileWithExpenses.h"
 #include "AccessoryMethods.h"
+#include "Date.h"
 
 using namespace std;
 
 int main() {
 
-    time_t czas;
-    struct tm * data;
-    int rok, miesiac, dzien;
-    const char * dzien_tygodnia[] = { "Niedziela", "Poniedzialek",
-        "Wtorek", "Sroda", "Czwartek", "Piatek", "Sobota" };
+//    time_t czas;
+//    struct tm * data;
+//    int rok, miesiac, dzien;
+//    const char * dzien_tygodnia[] = { "Niedziela", "Poniedzialek",
+//        "Wtorek", "Sroda", "Czwartek", "Piatek", "Sobota" };
+//
+//
+//    time( & czas );
+//    data = localtime( & czas );
+//    data->tm_year = rok - 1900;
+//    data->tm_mon = miesiac - 1;
+//    data->tm_mday = dzien;
+
+//    cout << data->tm_year + 1900 << " " << data->tm_mon + 1 << " "<< data->tm_mday << endl;
+//
+//    mktime( data );
 
 
-    time( & czas );
-    data = localtime( & czas );
-    data->tm_year = rok - 1900;
-    data->tm_mon = miesiac - 1;
-    data->tm_mday = dzien;
+//    cout << "Dzien Twoich narodzin to: " << dzien_tygodnia[ data->tm_wday ] << endl;
 
-    mktime( data );
-
-    cout << "Dzien Twoich narodzin to: " << dzien_tygodnia[ data->tm_wday ];
+//    cout << data->tm_year << " " << data->tm_mon << " "<< data->tm_mday << endl;
 
     //getch();
 
@@ -55,5 +61,11 @@ int main() {
 
 cout << AccessoryMethods::changePointToComa("12,12") << endl;
 
+
+Date date;
+cout << date.retrieveActualDate() << endl;
+cout << date.retrievePreviousMonth() << endl;
+cout << date.checkIfDateIsCorrect(19000228) << endl;
+cout << date.compareDates(19000505,19000506) << endl;
     return 0;
 }
