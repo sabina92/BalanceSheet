@@ -7,6 +7,7 @@
 #include "User.h"
 #include <vector>
 #include "Markup.h"
+#include "AccessoryMethods.h"
 
 using namespace std;
 
@@ -18,8 +19,9 @@ public:
     XMLFileWithUsers(string nameOfFile) : NAME_OF_XML_FILE_WITH_USERS(nameOfFile), XMLFile(nameOfFile) {
     }
 
-    void saveUserToXMLFIle(User user);
+    void saveUserToXMLFile(User user, int lastUserId);
     vector <User> loadUsers();
+    void saveAllUsersToXMLFile(vector <User> users);
 
 
 };
