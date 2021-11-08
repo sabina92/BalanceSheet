@@ -19,10 +19,9 @@ bool XMLFileWithUsers::doesFileExist()
 void XMLFileWithUsers::saveUserToXMLFile(User user,int lastUserId)
 {
         CMarkup xmlFileUser;
-    bool bSuccess = true;
-    bSuccess = doesFileExist();
+  bool fileExists = xmlFileUser.Load( "users.xml" );
 
-    if (!bSuccess)
+    if (!fileExists)
     {
         xmlFileUser.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xmlFileUser.AddElem("Users");
@@ -37,7 +36,11 @@ void XMLFileWithUsers::saveUserToXMLFile(User user,int lastUserId)
         xmlFileUser.FindElem("UserId");
         MCD_STR strrId = xmlFileUser.GetData();
         if (atoi(MCD_2PCSZ(strrId)) == lastUserId)
+        {
+            xmlFileUser.OutOfElem();
             break;
+        }
+            xmlFileUser.OutOfElem();
     }
     xmlFileUser.AddElem("User");
     xmlFileUser.IntoElem();
