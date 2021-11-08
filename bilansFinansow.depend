@@ -1,9 +1,13 @@
 # depslib dependency file v1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 1636237278 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
 =======
 1636368792 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
 >>>>>>> temp2
+=======
+1636237278 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
+>>>>>>> a55cd894a81039f45a61ebbb4b42fa5e00b1df13
 	"AccessoryMethods.h"
 
 1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\balancesheet.cpp
@@ -30,10 +34,14 @@
 1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\incomesmanager.cpp
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 1636237278 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
 =======
 1636368792 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
 >>>>>>> temp2
+=======
+1636237278 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
+>>>>>>> a55cd894a81039f45a61ebbb4b42fa5e00b1df13
 	<time.h>
 	<conio.h>
 	<iostream>
@@ -46,6 +54,7 @@
 <<<<<<< HEAD
 
 1636237278 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
+<<<<<<< HEAD
 =======
 	"UserManager.h"
 
@@ -53,6 +62,9 @@
 	"UserManager.h"
 >>>>>>> temp2
 
+=======
+
+>>>>>>> a55cd894a81039f45a61ebbb4b42fa5e00b1df13
 1633421275 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfile.cpp
 	"XMLFile.h"
 	"Markup.h"
@@ -106,10 +118,14 @@
 	<fstream>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 1636364258 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.h
 =======
 1636368792 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.h
 >>>>>>> temp2
+=======
+1636364258 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.h
+>>>>>>> a55cd894a81039f45a61ebbb4b42fa5e00b1df13
 	<iostream>
 	"XMLFile.h"
 	<string>
@@ -131,10 +147,14 @@
 	<vector>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 1636237278 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.h
 =======
 1636368792 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.h
 >>>>>>> temp2
+=======
+1636237278 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.h
+>>>>>>> a55cd894a81039f45a61ebbb4b42fa5e00b1df13
 	<iostream>
 	<sstream>
 	<string>
