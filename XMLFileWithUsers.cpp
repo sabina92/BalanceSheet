@@ -1,6 +1,9 @@
 #include "XMLFileWithUsers.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a55cd894a81039f45a61ebbb4b42fa5e00b1df13
 
 string XMLFileWithUsers::downloadNameOfFile()
     {
