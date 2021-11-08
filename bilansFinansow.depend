@@ -1,31 +1,31 @@
 # depslib dependency file v1.0
-1634937558 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
+1636237278 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
 	"AccessoryMethods.h"
 
-1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\balancesheet.cpp
+1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\balancesheet.cpp
 
-1635369540 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.cpp
+1635366104 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.cpp
 	"Date.h"
 
-1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expense.cpp
+1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expense.cpp
 
-1634639775 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expensesmanager.cpp
+1634636175 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expensesmanager.cpp
 	<iostream>
 	<vector>
 	<string>
 	"XMLFileWithExpenses.h"
 	"Expense.h"
 
-1634937558 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\finance.cpp
+1634933958 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\finance.cpp
 	"Finance.h"
 
-1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\financecalculator.cpp
+1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\financecalculator.cpp
 
-1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\income.cpp
+1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\income.cpp
 
-1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\incomesmanager.cpp
+1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\incomesmanager.cpp
 
-1635369329 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
+1636237278 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
 	<time.h>
 	<conio.h>
 	<iostream>
@@ -36,31 +36,31 @@
 	"AccessoryMethods.h"
 	"Date.h"
 
-1632223730 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
+1636237278 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
 
-1633424875 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfile.cpp
+1633421275 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfile.cpp
 	"XMLFile.h"
 	"Markup.h"
 
-1634937558 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithexpenses.cpp
+1634933958 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithexpenses.cpp
 	"XMLFileWithExpenses.h"
 
-1634937558 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithincomes.cpp
+1634933958 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithincomes.cpp
 	"XMLFileWithIncomes.h"
 
 1634595455 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.cpp
 	"XMLFileWithUsers.h"
 
-1634937558 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\finance.h
+1634933958 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\finance.h
 	<iostream>
 
-1632562473 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\user.cpp
+1632558873 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\user.cpp
 	"User.h"
 
-1632562467 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\user.h
+1632558867 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\user.h
 	<iostream>
 
-1632923678 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\markup.cpp
+1632920078 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\markup.cpp
 	<stdio.h>
 	"Markup.h"
 	<errno.h>
@@ -68,29 +68,29 @@
 	<windows.h>
 	<mbstring.h>
 
-1632923678 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\markup.h
+1632920078 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\markup.h
 	<stdlib.h>
 	<string.h>
 	<string>
 	<afx.h>
 
-1634596618 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithexpenses.h
+1634593018 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithexpenses.h
 	<iostream>
 	"Expense.h"
 	"XMLFile.h"
 	"Markup.h"
 	<vector>
 
-1634937558 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expense.h
+1634933958 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expense.h
 	<iostream>
 	"Finance.h"
 	<string>
 
-1633424875 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfile.h
+1633421275 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfile.h
 	<iostream>
 	<fstream>
 
-1634163258 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.h
+1636364258 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.h
 	<iostream>
 	"XMLFile.h"
 	<string>
@@ -98,19 +98,19 @@
 	<vector>
 	"Markup.h"
 
-1634636321 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithincomes.h
+1634632721 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithincomes.h
 	<iostream>
 	"XMLFile.h"
 	"Income.h"
 	"Markup.h"
 
-1634937558 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\income.h
+1634933958 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\income.h
 	<iostream>
 	"Finance.h"
 	<string>
 	<vector>
 
-1634937558 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.h
+1636237278 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.h
 	<iostream>
 	<sstream>
 	<string>
@@ -119,7 +119,7 @@
 	<vector>
 	"Finance.h"
 
-1635369277 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.h
+1635366104 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.h
 	<iostream>
 	<string>
 	<time.h>

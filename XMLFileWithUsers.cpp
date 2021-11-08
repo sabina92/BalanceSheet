@@ -1,5 +1,21 @@
 #include "XMLFileWithUsers.h"
 
+
+string XMLFileWithUsers::downloadNameOfFile()
+    {
+        return NAME_OF_XML_FILE_WITH_USERS;
+    }
+
+bool XMLFileWithUsers::doesFileExist()
+    {
+        string nameOfFile = downloadNameOfFile().c_str();
+        CMarkup xmlFile;
+        bool isXMLFileExists = xmlFile.Load(nameOfFile);
+
+        cout << endl <<isXMLFileExists ;
+        return isXMLFileExists;
+    }
+
  void XMLFileWithUsers::saveUserToXMLFIle(User user)
  {
     CMarkup xmlFileUser;
