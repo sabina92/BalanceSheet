@@ -84,50 +84,50 @@ void UserManager::changeLoggedInUserPassword()
     xmlFileWithUsers.saveAllUsersToXMLFile(users);
 }
 
-//int UzytkownikMenedzer::logowanieUzytkownika()
-//{
-//    Uzytkownik uzytkownik;
-//    string login = "", haslo = "";
-//    MetodyPomocnicze metodyPomocnicze;
-//
-//    cout << endl << "Podaj login: ";
-//    login = metodyPomocnicze.wczytajLinie();
-//    int i = 0;
-//
-//    while (i != uzytkownicy.size())
-//    {
-//        if (uzytkownicy[i].pobierzLogin() == login)
-//        {
-//            for (int iloscProb = 3; iloscProb > 0; iloscProb--)
-//            {
-//                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-//                haslo = metodyPomocnicze.wczytajLinie();
-//
-//                if (uzytkownicy[i].pobierzHaslo() == haslo)
-//                {
-//                    cout << endl << "Zalogowales sie." << endl << endl;
-//                    system("pause");
-//                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
-//                    return idZalogowanegoUzytkownika;
-//                }
-//            }
-//            cout << "Wprowadzono 3 razy bledne haslo." << endl;
-//            system("pause");
-//            return 0;
-//        }
-//        i++;
-//    }
-//    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
-//    system("pause");
-//    return 0;
-//}
-//
-//void UzytkownikMenedzer::wylogujUzytkownika()
-//{
-//    idZalogowanegoUzytkownika = 0;
-//}
-//
-//int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
-//{
-//    return idZalogowanegoUzytkownika;
-//}
+int UserManager::logInUser()
+{
+    User user;
+    string login = "", password = "";
+    AccessoryMethods accessoryMethods;
+
+    cout << endl << "Give your login : ";
+    login = accessoryMethods.loadLine();
+    int i = 0;
+
+    while (i != users.size())
+    {
+        if (users[i].getLogin() == login)
+        {
+            for (int chanceAmount = 3; chanceAmount > 0; chanceAmount--)
+            {
+                cout << "Give the password. There are " << chanceAmount << " chances. ";
+                password = accessoryMethods.loadLine();
+
+                if (users[i].getPassword() == password)
+                {
+                    cout << endl << "You logged in." << endl << endl;
+                    system("pause");
+                    loggedInUserId = users[i].getId();
+                    return loggedInUserId;
+                }
+            }
+            cout << "You entered the wrong password 3 times." << endl;
+            system("pause");
+            return 0;
+        }
+        i++;
+    }
+    cout << "There is no user with this login" << endl << endl;
+    system("pause");
+    return 0;
+}
+
+void UserManager::logOutUser()
+{
+    loggedInUserId = 0;
+}
+
+int UserManager::downloadTheLoggedInUserId()
+{
+    return loggedInUserId;
+}

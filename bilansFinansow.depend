@@ -88,7 +88,7 @@
 
 1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\incomesmanager.cpp
 
-1636374603 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
+1636402712 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
 	<time.h>
 	<conio.h>
 	<iostream>
@@ -100,7 +100,7 @@
 	"Date.h"
 	"UserManager.h"
 
-1636372619 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
+1636402845 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
 	"UserManager.h"
 
 1636372619 er.h"
@@ -115,7 +115,7 @@
 1634933958 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithincomes.cpp
 	"XMLFileWithIncomes.h"
 
-1636375012 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.cpp
+1636402833 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.cpp
 	"XMLFileWithUsers.h"
 
 1634933958 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\finance.h
@@ -157,7 +157,7 @@
 	<iostream>
 	<fstream>
 
-1636374589 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.h
+1636402712 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.h
 	<iostream>
 	"XMLFile.h"
 	<string>

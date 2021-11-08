@@ -14,4 +14,11 @@
 <Name>ff</Name>
 <Surname>f</Surname>
 </User>
+<User>
+<UserId>3</UserId>
+<Login>fdf</Login>
+<Password>fdf</Password>
+<Name>fdf</Name>
+<Surname>dff</Surname>
+</User>
 </Users>

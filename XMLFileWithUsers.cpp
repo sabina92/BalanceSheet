@@ -1,20 +1,5 @@
 #include "XMLFileWithUsers.h"
 
-string XMLFileWithUsers::downloadNameOfFile()
-    {
-        return NAME_OF_XML_FILE_WITH_USERS;
-    }
-
-bool XMLFileWithUsers::doesFileExist()
-    {
-        string nameOfFile = downloadNameOfFile().c_str();
-        CMarkup xmlFile;
-        bool isXMLFileExists = xmlFile.Load(nameOfFile);
-
-        cout << endl <<isXMLFileExists ;
-        return isXMLFileExists;
-    }
-
 
 void XMLFileWithUsers::saveUserToXMLFile(User user,int lastUserId)
 {
@@ -93,18 +78,19 @@ vector <User> XMLFileWithUsers::loadUsers()
 void XMLFileWithUsers::saveAllUsersToXMLFile(vector <User> users)
 {
     CMarkup xmlFileUser;
-    bool bSuccess = true;
-    bSuccess = doesFileExist();
+  bool fileExists = xmlFileUser.Load( "users.xml" );
 
-    if (!bSuccess)
+    if (!fileExists)
     {
         xmlFileUser.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xmlFileUser.AddElem("Users");
     }
+
+    xmlFileUser.FindElem();
+    xmlFileUser.IntoElem();
+
     for (int i=0; i < users.size(); i++)
     {
-        xmlFileUser.FindElem();
-        xmlFileUser.IntoElem();
         xmlFileUser.AddElem("User");
         xmlFileUser.IntoElem();
         xmlFileUser.AddElem("UserId", to_string(users[i].getId()));
@@ -112,6 +98,7 @@ void XMLFileWithUsers::saveAllUsersToXMLFile(vector <User> users)
         xmlFileUser.AddElem("Password", users[i].getPassword());
         xmlFileUser.AddElem("Name", users[i].getName());
         xmlFileUser.AddElem("Surname", users[i].getSurname());
+        xmlFileUser.OutOfElem();
     }
 
 
