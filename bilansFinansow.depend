@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1635542140 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
+1636368792 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
 	"AccessoryMethods.h"
 
 1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\balancesheet.cpp
@@ -25,7 +25,7 @@
 
 1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\incomesmanager.cpp
 
-1635958435 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
+1636368792 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
 	<time.h>
 	<conio.h>
 	<iostream>
@@ -37,7 +37,7 @@
 	"Date.h"
 	"UserManager.h"
 
-1635957900 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
+1636368792 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
 	"UserManager.h"
 
 1633421275 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfile.cpp
@@ -50,7 +50,7 @@
 1634933958 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithincomes.cpp
 	"XMLFileWithIncomes.h"
 
-1636148419 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.cpp
+1636372072 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.cpp
 	"XMLFileWithUsers.h"
 
 1634933958 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\finance.h
@@ -92,7 +92,7 @@
 	<iostream>
 	<fstream>
 
-1635976386 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.h
+1636368792 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\xmlfilewithusers.h
 	<iostream>
 	"XMLFile.h"
 	<string>
@@ -113,7 +113,7 @@
 	<string>
 	<vector>
 
-1635542126 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.h
+1636368792 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.h
 	<iostream>
 	<sstream>
 	<string>
@@ -129,7 +129,7 @@
 	<conio.h>
 	"AccessoryMethods.h"
 
-1635958313 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.h
+1636368792 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.h
 	<iostream>
 	<vector>
 	<windows.h>

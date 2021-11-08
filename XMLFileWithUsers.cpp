@@ -11,9 +11,18 @@ void XMLFileWithUsers::saveUserToXMLFile(User user,int lastUserId)
         xmlFileUser.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xmlFileUser.AddElem("Users");
     }
+
     xmlFileUser.FindElem();
     xmlFileUser.IntoElem();
 
+    while (xmlFileUser.FindElem("User"))
+    {
+        xmlFileUser.IntoElem();
+        xmlFileUser.FindElem("UserId");
+        MCD_STR strrId = xmlFileUser.GetData();
+        if (atoi(MCD_2PCSZ(strrId)) == lastUserId)
+            break;
+    }
     xmlFileUser.AddElem("User");
     xmlFileUser.IntoElem();
     xmlFileUser.AddElem("UserId", to_string(user.getId()));
