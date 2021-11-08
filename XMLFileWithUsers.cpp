@@ -1,10 +1,5 @@
 #include "XMLFileWithUsers.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a55cd894a81039f45a61ebbb4b42fa5e00b1df13
-
 string XMLFileWithUsers::downloadNameOfFile()
     {
         return NAME_OF_XML_FILE_WITH_USERS;
@@ -20,14 +15,10 @@ bool XMLFileWithUsers::doesFileExist()
         return isXMLFileExists;
     }
 
- void XMLFileWithUsers::saveUserToXMLFIle(User user)
- {
-    CMarkup xmlFileUser;
-=======
+
 void XMLFileWithUsers::saveUserToXMLFile(User user,int lastUserId)
 {
         CMarkup xmlFileUser;
->>>>>>> temp2
     bool bSuccess = true;
     bSuccess = doesFileExist();
 
