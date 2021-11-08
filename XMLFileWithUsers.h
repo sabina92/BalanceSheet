@@ -21,13 +21,7 @@ public:
 
     void saveUserToXMLFile(User user, int lastUserId);
     vector <User> loadUsers();
-
-    bool doesFileExist();
-    string downloadNameOfFile();
-
     void saveAllUsersToXMLFile(vector <User> users);
-
-
 
 
 };

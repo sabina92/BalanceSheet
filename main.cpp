@@ -78,8 +78,8 @@ cout << date.compareDates(19000505,19000506) << endl;
 //cout << date.compareDates(19000505,19000506) << endl;
 
 UserManager userManager("users.xml");
-userManager.registerUser();
-
+//userManager.registerUser();
+userManager.logInUser();
 
     return 0;
 }
