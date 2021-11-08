@@ -1,5 +1,6 @@
 #include "XMLFileWithUsers.h"
 
+<<<<<<< HEAD
 
 string XMLFileWithUsers::downloadNameOfFile()
     {
@@ -19,17 +20,31 @@ bool XMLFileWithUsers::doesFileExist()
  void XMLFileWithUsers::saveUserToXMLFIle(User user)
  {
     CMarkup xmlFileUser;
+=======
+void XMLFileWithUsers::saveUserToXMLFile(User user,int lastUserId)
+{
+        CMarkup xmlFileUser;
+>>>>>>> temp2
     bool bSuccess = true;
     bSuccess = doesFileExist();
 
-     if (!bSuccess)
-     {
+    if (!bSuccess)
+    {
         xmlFileUser.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xmlFileUser.AddElem("Users");
-     }
+    }
 
     xmlFileUser.FindElem();
     xmlFileUser.IntoElem();
+
+    while (xmlFileUser.FindElem("User"))
+    {
+        xmlFileUser.IntoElem();
+        xmlFileUser.FindElem("UserId");
+        MCD_STR strrId = xmlFileUser.GetData();
+        if (atoi(MCD_2PCSZ(strrId)) == lastUserId)
+            break;
+    }
     xmlFileUser.AddElem("User");
     xmlFileUser.IntoElem();
     xmlFileUser.AddElem("UserId", to_string(user.getId()));
@@ -39,15 +54,15 @@ bool XMLFileWithUsers::doesFileExist()
     xmlFileUser.AddElem("Surname", user.getSurname());
 
     xmlFileUser.Save("users.xml");
- }
+}
 
- vector <User> XMLFileWithUsers::loadUsers()
- {
+vector <User> XMLFileWithUsers::loadUsers()
+{
     CMarkup xmlFileUser;
     xmlFileUser.Load( NAME_OF_XML_FILE_WITH_USERS );
     User user;
     vector <User> users;
-    //xmlFileUser.ResetPos();
+    xmlFileUser.ResetPos();
 
     xmlFileUser.FindElem();
     xmlFileUser.IntoElem();
@@ -73,11 +88,35 @@ bool XMLFileWithUsers::doesFileExist()
         xmlFileUser.OutOfElem();
 
         users.push_back(user);
+        cout << "load Users" << endl;
     }
-//    for (int i=0; i < users.size(); i++)
-//    {
-//        cout << users[i].getLogin() << endl << users[i].getName()<< endl;
-//    }
-
     return users;
- }
+}
+
+void XMLFileWithUsers::saveAllUsersToXMLFile(vector <User> users)
+{
+    CMarkup xmlFileUser;
+    bool bSuccess = true;
+    bSuccess = doesFileExist();
+
+    if (!bSuccess)
+    {
+        xmlFileUser.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
+        xmlFileUser.AddElem("Users");
+    }
+    for (int i=0; i < users.size(); i++)
+    {
+        xmlFileUser.FindElem();
+        xmlFileUser.IntoElem();
+        xmlFileUser.AddElem("User");
+        xmlFileUser.IntoElem();
+        xmlFileUser.AddElem("UserId", to_string(users[i].getId()));
+        xmlFileUser.AddElem("Login", users[i].getLogin());
+        xmlFileUser.AddElem("Password", users[i].getPassword());
+        xmlFileUser.AddElem("Name", users[i].getName());
+        xmlFileUser.AddElem("Surname", users[i].getSurname());
+    }
+
+
+    xmlFileUser.Save("users.xml");
+}

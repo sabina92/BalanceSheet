@@ -82,3 +82,14 @@ string AccessoryMethods::changePointToComa(string amount)
     }
     return amount;
 }
+<<<<<<< HEAD
+=======
+
+string AccessoryMethods::loadLine()
+{
+    string enter = "";
+    cin.sync();
+    getline(cin, enter);
+    return enter;
+}
+>>>>>>> temp2

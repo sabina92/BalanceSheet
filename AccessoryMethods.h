@@ -24,7 +24,11 @@ static int calculateTheDifference(int firstSum, int secondSum);
 static string convertIntToStringWithDash(int number);
 static string convertIntToString(int number);
 static int convertStringToInt(string number);
+<<<<<<< HEAD
 
+=======
+string loadLine();
+>>>>>>> temp2
 
 };
 
