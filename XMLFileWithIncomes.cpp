@@ -53,7 +53,7 @@ vector <Income> XMLFileWithIncome::loadIncomes()
         income.setItem(strIncomeItem);
         xmlFileIncome.FindElem("Amount");
         MCD_STR strIncomeAmount= xmlFileIncome.GetData();
-        income.setAmount(atoi(MCD_2PCSZ(strIncomeAmount)));
+        income.setAmount(strIncomeAmount);
 
         xmlFileIncome.OutOfElem();
 

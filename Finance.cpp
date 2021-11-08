@@ -21,7 +21,7 @@ void Finance::setItem(string newItem)
     item = newItem;
 }
 
-void Finance::setAmount(int newAmount)
+void Finance::setAmount(string newAmount)
 {
     amount = newAmount;
 }
@@ -46,7 +46,7 @@ string Finance::getItem()
     return item;
 }
 
-int Finance::getAmount()
+string Finance::getAmount()
 {
     return amount;
 }

@@ -204,7 +204,8 @@ _+ askTheCustomerAboutAmount(): int_
 _+ showAllVectorElements() : void_
 _+ calculateTheSum() : int _
 _+ calculateTheDifference() : int_
-_+ convertIntToStringWithDash() : string_</panel_attributes>
+_+ convertIntToStringWithDash() : string_
+_+ convertStringToInt() : int_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -435,17 +436,6 @@ _+ convertIntToStringWithDash() : string_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1112</x>
-      <y>600</y>
-      <w>80</w>
-      <h>248</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;10.0;80.0;290.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>944</x>
       <y>648</y>
       <w>24</w>
@@ -464,17 +454,6 @@ _+ convertIntToStringWithDash() : string_</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
     <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1112</x>
-      <y>528</y>
-      <w>200</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;50.0;230.0;50.0;230.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

@@ -14,7 +14,7 @@ class Income : public Finance
     int incomeUserId;
     int incomeDate;
     string incomeItem;
-    int incomeAmount;
+    string incomeAmount;
 
 public:
 
