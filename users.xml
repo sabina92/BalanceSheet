@@ -1,7 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Users>
+<User>
+<UserId>1</UserId>
+<Login>df</Login>
+<Password>fdfd</Password>
+<Name>ff</Name>
+<Surname>fdf</Surname>
+</User>
 <User>
 <UserId>2</UserId>
-<Login>kh</Login>
-<Password>hk</Password>
-<Name>hj</Name>
-<Surname>hj</Surname>
+<Login>dfdf</Login>
+<Password>fdfd</Password>
+<Name>ff</Name>
+<Surname>f</Surname>
 </User>
+</Users>
