@@ -24,9 +24,10 @@ static int calculateTheDifference(int firstSum, int secondSum);
 static string convertIntToStringWithDash(int number);
 static string convertIntToString(int number);
 static int convertStringToInt(string number);
+static string deletingDashesFromDate(string date);
 
 
-string loadLine();
+static string loadLine();
 
 };
 

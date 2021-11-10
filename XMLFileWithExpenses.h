@@ -11,14 +11,17 @@ using namespace std;
 
 class XMLFileWithExpense : public XMLFile
 {
-string nameOfTemporaryXMLFileWithExpenses = "Expenses.xml";
+string nameOfTemporaryXMLFileWithExpenses = "TemporaryExpenses.xml";
 int idOfLastExpense;
+
 
 public:
     XMLFileWithExpense(string nameOfFile) : XMLFile(nameOfFile) {
+        idOfLastExpense = downloadLastExpenseId();
     }
-    bool saveExpenseToXMLFIle(Expense expense);
-    vector <Expense> loadExpenses();
+    bool saveExpenseToXMLFile(Expense expense);
+    vector <Expense> loadExpenses(int loggedInUserId);
+    int downloadLastExpenseId();
 
 };
 

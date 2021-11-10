@@ -10,7 +10,7 @@ using namespace std;
 
 class XMLFileWithIncome : public XMLFile
 {
-string nameOfTemporaryXMLFileWithIncomes = "Incomes.xml";
+string nameOfTemporaryXMLFileWithIncomes = "TemporaryIncomes.xml";
 
 public:
     XMLFileWithIncome(string nameOfFile) : XMLFile(nameOfFile) {

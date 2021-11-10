@@ -92,3 +92,17 @@ string AccessoryMethods::loadLine()
     return enter;
 }
 
+string AccessoryMethods::deletingDashesFromDate(string date)
+{
+    string newDate;
+    for (int k=0; k < date.size(); k++)
+    {
+        if (date[k] != '-')
+        {
+            newDate += date[k];
+        }
+        else
+            newDate = newDate;
+    }
+    return newDate;
+}

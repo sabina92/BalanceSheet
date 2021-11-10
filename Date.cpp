@@ -86,6 +86,9 @@ bool Date::checkIfDateIsCorrect(int dateToCheck)
     intMonth = giveMonthFromDate(dateToCheck);
     intYear = giveYearFromDate(dateToCheck);
 
+    cout << dateToCheck << endl;
+    cout << intDay << " " << intMonth << " " << intYear << endl;
+
     if ((checkIfMonthHasCorrectDaysNumber(intMonth, intDay, intYear) == false) || (checkIfMonthIsCorrect(intMonth) == false) || (checkIfYearIsCorrect(intYear) == false))
         isCorrect = false;
     return isCorrect;
