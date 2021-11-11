@@ -17,6 +17,11 @@ class Expense : public Finance
 
 public:
 
+static bool comp( const Expense & l, const Expense & r )
+{
+    return l.getDate() < r.getDate();
+}
+
 };
 
 #endif

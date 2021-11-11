@@ -36,7 +36,7 @@ int Finance::getUserId()
     return userId;
 }
 
-int Finance::getDate()
+int Finance:: getDate() const
 {
     return date;
 }

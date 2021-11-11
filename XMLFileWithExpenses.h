@@ -11,7 +11,7 @@ using namespace std;
 
 class XMLFileWithExpense : public XMLFile
 {
-string nameOfTemporaryXMLFileWithExpenses = "TemporaryExpenses.xml";
+string nameOfTemporaryXMLFileWithExpenses = "expenses.xml";
 int idOfLastExpense;
 
 

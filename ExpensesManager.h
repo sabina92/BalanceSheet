@@ -5,6 +5,7 @@
 #include <vector>
 #include <windows.h>
 #include <cstdlib>
+#include <algorithm>
 
 #include "Expense.h"
 #include "XMLFileWithExpenses.h"
@@ -24,7 +25,7 @@ class ExpensesManager
  XMLFileWithExpense xmlFileWithExpenses;
 
  Expense giveNewExpenseData(int intDate);
-
+bool comp( const Expense & l, const Expense & r );
 
 public:
     ExpensesManager(string nameOfFileWithExpenses, int loggedInUserId) : xmlFileWithExpenses (nameOfFileWithExpenses), LOGGED_IN_USER_ID(loggedInUserId) {
@@ -32,7 +33,9 @@ allExpenses = xmlFileWithExpenses.loadExpenses(LOGGED_IN_USER_ID);
     };
 
     void addExpense();
-    vector <Expense> sortExpenses();
+   void sortExpenses();
+    void showVectorElements();
+    vector <Expense> getVector();
     vector <Expense> chooseExpensesFromCurrentMonth();
     vector <Expense> chooseExpensesFromPrevioustMonth();
     vector <Expense> chooseExpensesFromChosenPeriod();

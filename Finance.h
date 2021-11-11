@@ -24,7 +24,7 @@ public:
 
     int getFinanceId();
     int getUserId();
-    int getDate();
+    int getDate()const;
     string getItem();
     string getAmount();
 };

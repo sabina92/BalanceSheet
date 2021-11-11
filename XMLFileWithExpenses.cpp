@@ -58,20 +58,20 @@ vector <Expense> XMLFileWithExpense::loadExpenses(int loggedInUserId)
         xmlFileExpense.FindElem("ExpenseId");
         MCD_STR strExpenseId = xmlFileExpense.GetData();
 
-        xmlFileExpense.FindElem("UserId");
+        xmlFileExpense.FindElem("ExpenseUserId");
         MCD_STR strUserId = xmlFileExpense.GetData();
         int intUserId = atoi(MCD_2PCSZ(strUserId));
         if (intUserId == loggedInUserId)
         {
             expense.setFinanceId(atoi(MCD_2PCSZ(strExpenseId)));
             expense.setUserId(atoi(MCD_2PCSZ(strUserId)));
-            xmlFileExpense.FindElem("Date");
+            xmlFileExpense.FindElem("ExpenseDate");
             MCD_STR strExpenseDate = xmlFileExpense.GetData();
             expense.setDate(atoi(MCD_2PCSZ(strExpenseDate)));
-            xmlFileExpense.FindElem("Item");
+            xmlFileExpense.FindElem("ExpenseItem");
             MCD_STR strExpenseItem = xmlFileExpense.GetData();
             expense.setItem(strExpenseItem);
-            xmlFileExpense.FindElem("Amount");
+            xmlFileExpense.FindElem("ExpenseAmount");
             MCD_STR strExpenseAmount= xmlFileExpense.GetData();
             expense.setAmount(strExpenseAmount);
 

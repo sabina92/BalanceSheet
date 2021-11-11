@@ -174,19 +174,19 @@ bool Date::checkIfYearIsBissextile(int year)
 }
 
 
-bool Date::compareDates(int date1, int date2)
+bool Date::compareDates(Finance date1,Finance date2)
 {
-    bool compareDates = true;
-    string stringDate1, stringDate2;
-    stringDate1 = AccessoryMethods::convertIntToString(date1);
-    stringDate2 = AccessoryMethods::convertIntToString(date2);
-
-    for (int j=0; j < 8; j++)
-    {
-       if (stringDate1[j] != stringDate2[j])
-       {
-           return compareDates = false;
-       }
-    }
-    return compareDates;
+    return date1.getDate() < date2.getDate();
+//    string stringDate1, stringDate2;
+//    stringDate1 = AccessoryMethods::convertIntToString(date1);
+//    stringDate2 = AccessoryMethods::convertIntToString(date2);
+//
+//    for (int j=0; j < 8; j++)
+//    {
+//       if (stringDate1[j] != stringDate2[j])
+//       {
+//           return compareDates = false;
+//       }
+//    }
+//    return compareDates;
 }

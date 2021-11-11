@@ -6,6 +6,7 @@
 #include <time.h>
 #include <conio.h>
 #include "AccessoryMethods.h"
+#include "Finance.h"
 
 
 using namespace std;
@@ -26,7 +27,7 @@ public:
  int retrieveActualDate();
  int retrievePreviousMonth();
  bool checkIfDateIsCorrect(int dateToCheck);
- bool compareDates(int date1, int date2);
+ bool compareDates(Finance date1, Finance date2);
 
 
 };

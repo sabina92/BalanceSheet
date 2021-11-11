@@ -15,6 +15,7 @@ int *ExpensesManager::checkDate()
         cout << newDate << endl;
         intDate = &newDate;
         return intDate;
+         delete intDate;
     }
     else
     {
@@ -36,14 +37,17 @@ int *ExpensesManager::checkDate()
                 if (date.checkIfDateIsCorrect(intDate2) )
                 {
                     return intDate;
+                     delete intDate;
                 }
             }
             cout << "You entered the wrong date 3 times." << endl;
             system("pause");
             intDate = 0;
             return intDate;
+            delete intDate;
         }
         return intDate;
+        delete intDate;
     }
 }
 
@@ -72,7 +76,6 @@ void ExpensesManager::addExpense()
 Expense ExpensesManager::giveNewExpenseData(int intDate)
 {
     Expense expense;
-    Date date;
     int expenseId = 0, expenseUserId = 0, expenseDate = 0;
     string expenseItem = "", expenseAmount = "", amountBeforeChecking ="";
 
@@ -92,7 +95,26 @@ Expense ExpensesManager::giveNewExpenseData(int intDate)
     return expense;
 }
 
-vector <Expense> sortExpenses();
+
+void ExpensesManager::sortExpenses()
+{
+	sort(allExpenses.begin(), allExpenses.end(),Expense::comp);
+}
+
+void ExpensesManager::showVectorElements()
+{
+
+       for (int k=0; k< allExpenses.size(); k++)
+    {
+        cout << allExpenses[k].getDate() << '-' << allExpenses[k].getItem() << '-' << allExpenses[k].getAmount() << endl;
+    }
+}
+
 vector <Expense> chooseExpensesFromCurrentMonth();
 vector <Expense> chooseExpensesFromPrevioustMonth();
 vector <Expense> chooseExpensesFromChosenPeriod();
+
+vector <Expense> ExpensesManager::getVector()
+{
+    return allExpenses;
+}

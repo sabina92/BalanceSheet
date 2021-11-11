@@ -8,15 +8,18 @@
 
 using namespace std;
 
-class XMLFileWithIncome : public XMLFile
+class XMLFileWithIncomes : public XMLFile
 {
-string nameOfTemporaryXMLFileWithIncomes = "TemporaryIncomes.xml";
+string nameOfTemporaryXMLFileWithIncomes = "incomes.xml";
+int idOfLastIncome;
 
 public:
-    XMLFileWithIncome(string nameOfFile) : XMLFile(nameOfFile) {
+    XMLFileWithIncomes(string nameOfFile) : XMLFile(nameOfFile) {
+        idOfLastIncome = downloadLastIncomeId();
     }
-    void saveIncomeToXMLFIle(Income income);
-    vector <Income> loadIncomes();
+    bool saveIncomeToXMLFile(Income income);
+    vector <Income> loadIncomes(int loggedInUserId);
+    int downloadLastIncomeId();
 
 
 };
