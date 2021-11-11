@@ -81,12 +81,14 @@ int main() {
 //userManager.logInUser();
 
 ExpensesManager expensesManager("expenses.xml", 2);
-//expensesManager.addExpense();
-//expensesManager.checkDate();
-//vector <Expense>*beforeSorted = expensesManager.getVector();
-
 expensesManager.sortExpenses();
 expensesManager.showVectorElements();
+vector <Expense> expensesFromCurrentMonth;
+expensesFromCurrentMonth = expensesManager.chooseExpensesFromCurrentMonth();
+cout << "------------------" << endl;
+AccessoryMethods::showAllVectorElements(expensesFromCurrentMonth);
+
+
 
     return 0;
 }

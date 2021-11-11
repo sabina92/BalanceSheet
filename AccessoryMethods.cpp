@@ -6,7 +6,7 @@
     cout << "Please, write the " << option << endl;
 }
 
- void AccessoryMethods::showAllVectorElements(vector <Finance> allElements)
+ void AccessoryMethods::showAllVectorElements(vector <Expense> allElements)
 {
     for (int k=0; k< allElements.size(); k++)
     {

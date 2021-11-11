@@ -110,7 +110,24 @@ void ExpensesManager::showVectorElements()
     }
 }
 
-vector <Expense> chooseExpensesFromCurrentMonth();
+
+vector <Expense> ExpensesManager::chooseExpensesFromCurrentMonth()
+{
+    vector <Expense> expensesFromCurrentMonth;
+    Date date;
+    int actualMonth = 0, actualDate = 0, checkedMonth = 0;
+    actualDate = date.retrieveActualDate();
+    actualMonth = date.giveMonthFromDate(actualDate);
+
+    for (int j = 0; j < allExpenses.size(); j++)
+    {
+        checkedMonth = date.giveMonthFromDate(allExpenses[j].getDate());
+        if (checkedMonth == actualMonth)
+            expensesFromCurrentMonth.push_back(allExpenses[j]);
+    }
+    return expensesFromCurrentMonth;
+}
+
 vector <Expense> chooseExpensesFromPrevioustMonth();
 vector <Expense> chooseExpensesFromChosenPeriod();
 

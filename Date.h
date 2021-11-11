@@ -15,7 +15,6 @@ class Date{
 int date;
 struct tm *giveActualDate();
 int giveYearFromDate (int wholeDate);
-int giveMonthFromDate (int wholeDate);
 int giveDayFromDate (int wholeDate);
 bool checkIfYearIsBissextile (int year);
 bool checkIfYearIsCorrect (int year);
@@ -28,6 +27,8 @@ public:
  int retrievePreviousMonth();
  bool checkIfDateIsCorrect(int dateToCheck);
  bool compareDates(Finance date1, Finance date2);
+ int giveMonthFromDate (int wholeDate);
+
 
 
 };
