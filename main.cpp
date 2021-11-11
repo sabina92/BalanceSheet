@@ -87,6 +87,11 @@ vector <Expense> expensesFromCurrentMonth;
 expensesFromCurrentMonth = expensesManager.chooseExpensesFromCurrentMonth();
 cout << "------------------" << endl;
 AccessoryMethods::showAllVectorElements(expensesFromCurrentMonth);
+vector <Expense> expensesFromPreviousMonth;
+expensesFromPreviousMonth = expensesManager.chooseExpensesFromPrevioustMonth();
+cout << "--------------------" << endl;
+AccessoryMethods::showAllVectorElements(expensesFromPreviousMonth);
+
 
 
 

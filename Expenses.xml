@@ -73,7 +73,7 @@
 <Expense>
 <ExpenseId>11</ExpenseId>
 <ExpenseUserId>2</ExpenseUserId>
-<ExpenseDate>20000909</ExpenseDate>
+<ExpenseDate>20211011</ExpenseDate>
 <ExpenseItem>farba</ExpenseItem>
 <ExpenseAmount>200</ExpenseAmount>
 </Expense>

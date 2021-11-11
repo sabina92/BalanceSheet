@@ -110,25 +110,77 @@ void ExpensesManager::showVectorElements()
     }
 }
 
+int ExpensesManager::giveTheActualMonth()
+{
+    Date date;
+    int actualMonth = 0, actualDate = 0;
+    actualDate = date.retrieveActualDate();
+    actualMonth = date.giveMonthFromDate(actualDate);
+
+    return actualMonth;
+}
+
+int ExpensesManager::giveTheActualYear()
+{
+    Date date;
+    int actualYear = 0, actualDate = 0;
+    actualDate = date.retrieveActualDate();
+    actualYear = date.giveYearFromDate(actualDate);
+
+    return actualYear;
+}
 
 vector <Expense> ExpensesManager::chooseExpensesFromCurrentMonth()
 {
-    vector <Expense> expensesFromCurrentMonth;
     Date date;
-    int actualMonth = 0, actualDate = 0, checkedMonth = 0;
-    actualDate = date.retrieveActualDate();
-    actualMonth = date.giveMonthFromDate(actualDate);
+    vector <Expense> expensesFromCurrentMonth;
+    int actualMonth = 0, actualYear = 0, checkedMonth = 0, checkedYear = 0;
+
+    actualMonth = giveTheActualMonth();
+    actualYear = giveTheActualYear();
 
     for (int j = 0; j < allExpenses.size(); j++)
     {
         checkedMonth = date.giveMonthFromDate(allExpenses[j].getDate());
-        if (checkedMonth == actualMonth)
+        checkedYear = date.giveYearFromDate(allExpenses[j].getDate());
+        if ((checkedMonth == actualMonth)&& (checkedYear == actualYear))
             expensesFromCurrentMonth.push_back(allExpenses[j]);
     }
     return expensesFromCurrentMonth;
 }
 
-vector <Expense> chooseExpensesFromPrevioustMonth();
+vector <Expense> ExpensesManager::chooseExpensesFromPrevioustMonth()
+{
+ Date date;
+    vector <Expense> expensesFromPreviousMonth;
+    int actualMonth = 0, actualYear = 0, checkedMonth = 0, checkedYear = 0, previousMonth = 0, previousYear = 0;
+
+    actualMonth = giveTheActualMonth();
+    actualYear = giveTheActualYear();
+
+
+    if (actualMonth == 1)
+    {
+        previousMonth = 12;
+        previousYear = actualYear - 1;
+    }
+    else
+    {
+        previousMonth = actualMonth - 1;
+        previousYear = actualYear;
+    }
+
+        for (int j = 0; j < allExpenses.size(); j++)
+    {
+        checkedMonth = date.giveMonthFromDate(allExpenses[j].getDate());
+        checkedYear = date.giveYearFromDate(allExpenses[j].getDate());
+        if ((checkedMonth == previousMonth)&& (checkedYear == previousYear))
+            expensesFromPreviousMonth.push_back(allExpenses[j]);
+
+    }
+    return expensesFromPreviousMonth;
+}
+
 vector <Expense> chooseExpensesFromChosenPeriod();
 
 vector <Expense> ExpensesManager::getVector()

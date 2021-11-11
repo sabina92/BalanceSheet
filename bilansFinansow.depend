@@ -3,7 +3,7 @@
 
 2 (•c	
 
-1636485578 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
+1636666196 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\accessorymethods.cpp
 	"AccessoryMethods.h"
 
 1636368792 p2
@@ -72,7 +72,7 @@
 
 1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expense.cpp
 
-1636665076 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expensesmanager.cpp
+1636667289 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expensesmanager.cpp
 	"ExpensesManager.h"
 
 1636636974 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\finance.cpp
@@ -84,7 +84,7 @@
 
 1632220130 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\incomesmanager.cpp
 
-1636664123 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
+1636667429 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
 	<time.h>
 	<conio.h>
 	<iostream>
@@ -185,7 +185,7 @@
 	"Finance.h"
 	"Expense.h"
 
-1636664724 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.h
+1636666952 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\date.h
 	<iostream>
 	<string>
 	<time.h>
@@ -202,7 +202,7 @@
 	"AccessoryMethods.h"
 	"User.h"
 
-1636664075 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expensesmanager.h
+1636666952 c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\expensesmanager.h
 	<iostream>
 	<vector>
 	<windows.h>

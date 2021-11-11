@@ -25,7 +25,8 @@ class ExpensesManager
  XMLFileWithExpense xmlFileWithExpenses;
 
  Expense giveNewExpenseData(int intDate);
-bool comp( const Expense & l, const Expense & r );
+ int giveTheActualMonth();
+ int giveTheActualYear();
 
 public:
     ExpensesManager(string nameOfFileWithExpenses, int loggedInUserId) : xmlFileWithExpenses (nameOfFileWithExpenses), LOGGED_IN_USER_ID(loggedInUserId) {
