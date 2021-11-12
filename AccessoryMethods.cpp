@@ -6,7 +6,7 @@
     cout << "Please, write the " << option << endl;
 }
 
- void AccessoryMethods::showAllVectorElements(vector <Finance> allElements)
+ void AccessoryMethods::showAllVectorElements(vector <Expense> allElements)
 {
     for (int k=0; k< allElements.size(); k++)
     {
@@ -92,3 +92,17 @@ string AccessoryMethods::loadLine()
     return enter;
 }
 
+string AccessoryMethods::deletingDashesFromDate(string date)
+{
+    string newDate;
+    for (int k=0; k < date.size(); k++)
+    {
+        if (date[k] != '-')
+        {
+            newDate += date[k];
+        }
+        else
+            newDate = newDate;
+    }
+    return newDate;
+}

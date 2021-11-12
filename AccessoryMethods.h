@@ -8,6 +8,7 @@
 #include <locale>
 #include <vector>
 #include "Finance.h"
+#include "Expense.h"
 
 using namespace std;
 
@@ -18,15 +19,16 @@ public:
 
 static string changePointToComa(string amount);
 static void askTheCustomer(string option);
-static void showAllVectorElements(vector <Finance> allElements);
+static void showAllVectorElements(vector <Expense> allElements);
 static int calculateTheSum(vector <Finance> allElements);
 static int calculateTheDifference(int firstSum, int secondSum);
 static string convertIntToStringWithDash(int number);
 static string convertIntToString(int number);
 static int convertStringToInt(string number);
+static string deletingDashesFromDate(string date);
 
 
-string loadLine();
+static string loadLine();
 
 };
 

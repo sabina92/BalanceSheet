@@ -70,7 +70,6 @@ vector <User> XMLFileWithUsers::loadUsers()
         xmlFileUser.OutOfElem();
 
         users.push_back(user);
-        cout << "load Users" << endl;
     }
     return users;
 }
@@ -78,7 +77,7 @@ vector <User> XMLFileWithUsers::loadUsers()
 void XMLFileWithUsers::saveAllUsersToXMLFile(vector <User> users)
 {
     CMarkup xmlFileUser;
-  bool fileExists = xmlFileUser.Load( "users.xml" );
+  bool fileExists = xmlFileUser.Load("users.xml" );
 
     if (!fileExists)
     {

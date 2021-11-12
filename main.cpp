@@ -7,6 +7,7 @@
 #include "XMLFileWithExpenses.h"
 #include "AccessoryMethods.h"
 #include "Date.h"
+#include "ExpensesManager.h"
 
 #include "UserManager.h"
 
@@ -52,7 +53,7 @@ int main() {
     vector <Expense> expenses;
 
     XMLFileWithExpense xmlFileWithExpense("Expenses.xml");
-    expenses = xmlFileWithExpense.loadExpenses();
+
 
 //    for (int i =0; i<expenses.size(); i++)
 //    {
@@ -62,24 +63,43 @@ int main() {
 //    int number1 = 20180202;
 //    cout << endl << AccessoryMethods::convertIntToStringWithDash(number1) << endl;
 
-cout << AccessoryMethods::changePointToComa("12,12") << endl;
-
-
-Date date;
-cout << date.retrieveActualDate() << endl;
-cout << date.retrievePreviousMonth() << endl;
-cout << date.checkIfDateIsCorrect(19000228) << endl;
-cout << date.compareDates(19000505,19000506) << endl;
+//cout << AccessoryMethods::changePointToComa("12,12") << endl;
+//
 
 //Date date;
 //cout << date.retrieveActualDate() << endl;
 //cout << date.retrievePreviousMonth() << endl;
-//cout << date.checkIfDateIsCorrect(19000228) << endl;
+//cout <<"date" << date.checkIfDateIsCorrect(19000228) << endl;
+//cout <<"date" << date.checkIfDateIsCorrect(20000818) << endl;
+//system("pause");
 //cout << date.compareDates(19000505,19000506) << endl;
+//
 
-UserManager userManager("users.xml");
+//UserManager userManager("users.xml");
 //userManager.registerUser();
-userManager.logInUser();
+//userManager.registerUser();
+//userManager.logInUser();
+
+ExpensesManager expensesManager("expenses.xml", 2);
+expensesManager.sortExpenses();
+expensesManager.showVectorElements();
+
+vector <Expense> expensesFromCurrentMonth;
+expensesFromCurrentMonth = expensesManager.chooseExpensesFromCurrentMonth();
+cout << "------------------" << endl;
+AccessoryMethods::showAllVectorElements(expensesFromCurrentMonth);
+
+vector <Expense> expensesFromPreviousMonth;
+expensesFromPreviousMonth = expensesManager.chooseExpensesFromPrevioustMonth();
+cout << "--------------------" << endl;
+AccessoryMethods::showAllVectorElements(expensesFromPreviousMonth);
+
+vector <Expense> expensesFromChoosenPeriod;
+expensesFromChoosenPeriod = expensesManager.chooseExpensesFromChosenPeriod();
+cout << "--------------------" << endl;
+AccessoryMethods::showAllVectorElements(expensesFromChoosenPeriod);
+
+
 
     return 0;
 }
