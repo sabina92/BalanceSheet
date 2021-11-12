@@ -15,7 +15,7 @@ int *ExpensesManager::checkDate()
         cout << newDate << endl;
         intDate = &newDate;
         return intDate;
-         delete intDate;
+        delete intDate;
     }
     else
     {
@@ -37,7 +37,7 @@ int *ExpensesManager::checkDate()
                 if (date.checkIfDateIsCorrect(intDate2) )
                 {
                     return intDate;
-                     delete intDate;
+                    delete intDate;
                 }
             }
             cout << "You entered the wrong date 3 times." << endl;
@@ -98,13 +98,13 @@ Expense ExpensesManager::giveNewExpenseData(int intDate)
 
 void ExpensesManager::sortExpenses()
 {
-	sort(allExpenses.begin(), allExpenses.end(),Expense::comp);
+    sort(allExpenses.begin(), allExpenses.end(),Expense::comp);
 }
 
 void ExpensesManager::showVectorElements()
 {
 
-       for (int k=0; k< allExpenses.size(); k++)
+    for (int k=0; k< allExpenses.size(); k++)
     {
         cout << allExpenses[k].getDate() << '-' << allExpenses[k].getItem() << '-' << allExpenses[k].getAmount() << endl;
     }
@@ -151,13 +151,12 @@ vector <Expense> ExpensesManager::chooseExpensesFromCurrentMonth()
 
 vector <Expense> ExpensesManager::chooseExpensesFromPrevioustMonth()
 {
- Date date;
+    Date date;
     vector <Expense> expensesFromPreviousMonth;
     int actualMonth = 0, actualYear = 0, checkedMonth = 0, checkedYear = 0, previousMonth = 0, previousYear = 0;
 
     actualMonth = giveTheActualMonth();
     actualYear = giveTheActualYear();
-
 
     if (actualMonth == 1)
     {
@@ -170,18 +169,65 @@ vector <Expense> ExpensesManager::chooseExpensesFromPrevioustMonth()
         previousYear = actualYear;
     }
 
-        for (int j = 0; j < allExpenses.size(); j++)
+    for (int j = 0; j < allExpenses.size(); j++)
     {
         checkedMonth = date.giveMonthFromDate(allExpenses[j].getDate());
         checkedYear = date.giveYearFromDate(allExpenses[j].getDate());
         if ((checkedMonth == previousMonth)&& (checkedYear == previousYear))
             expensesFromPreviousMonth.push_back(allExpenses[j]);
-
     }
     return expensesFromPreviousMonth;
 }
 
-vector <Expense> chooseExpensesFromChosenPeriod();
+int ExpensesManager::convertCustomerDateToInt(string dateDescribe)
+{
+    int customerDate = 0;
+    string stringCustomerDate = "", customerDateWithoutDashes = "";
+
+    AccessoryMethods::askTheCustomer(dateDescribe);
+    stringCustomerDate = AccessoryMethods::loadLine();
+    customerDateWithoutDashes = AccessoryMethods::deletingDashesFromDate(stringCustomerDate);
+    customerDate = AccessoryMethods::convertStringToInt(customerDateWithoutDashes);
+    return customerDate;
+}
+
+vector <Expense> ExpensesManager::chooseExpensesFromChosenPeriod()
+{
+    vector <Expense> expensesFromChoosenPeriod;
+    int customerStartDate = 0, customerStopDate = 0;
+    string initialDescibe = "the initial date for the expense period: ", finalDescibe = "the final date for the expense period: ";
+
+    customerStartDate = convertCustomerDateToInt(initialDescibe);
+    while (!checkPeriodDate(customerStartDate))
+    {
+        cout << "You gave the wrong date. Please, give the correct date: " << endl;
+        customerStartDate = convertCustomerDateToInt(initialDescibe);
+    }
+
+        customerStopDate = convertCustomerDateToInt(finalDescibe);
+    while (!checkPeriodDate(customerStopDate))
+    {
+        cout << "You gave the wrong date. Please, give the correct date: " << endl;
+        customerStopDate = convertCustomerDateToInt(finalDescibe);
+    }
+
+    for (int j = 0; j < allExpenses.size(); j++)
+    {
+        if ((allExpenses[j].getDate() >= customerStartDate) && (allExpenses[j].getDate() <= customerStopDate))
+            expensesFromChoosenPeriod.push_back(allExpenses[j]);
+    }
+    return expensesFromChoosenPeriod;
+}
+
+int ExpensesManager::checkPeriodDate (int dateToCheck)
+{
+    Date date;
+    bool dateCheck = date.checkIfDateIsCorrect(dateToCheck);
+    if (dateCheck == true)
+        return 1;
+    else
+        return 0;
+}
 
 vector <Expense> ExpensesManager::getVector()
 {

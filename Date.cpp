@@ -25,12 +25,6 @@ int Date::retrieveActualDate()
     return AccessoryMethods::convertStringToInt(wholeActualDate);
 }
 
-int Date::retrievePreviousMonth()
-{
-    struct tm * actualTime = giveActualDate();
-    int previousMonth = actualTime->tm_mon;
-    return previousMonth;
-}
 
 int Date::giveYearFromDate (int wholeDate)
 {
@@ -86,10 +80,7 @@ bool Date::checkIfDateIsCorrect(int dateToCheck)
     intMonth = giveMonthFromDate(dateToCheck);
     intYear = giveYearFromDate(dateToCheck);
 
-    cout << dateToCheck << endl;
-    cout << intDay << " " << intMonth << " " << intYear << endl;
-
-    if ((checkIfMonthHasCorrectDaysNumber(intMonth, intDay, intYear) == false) || (checkIfMonthIsCorrect(intMonth) == false) || (checkIfYearIsCorrect(intYear) == false))
+    if ((checkIfMonthHasCorrectDaysNumber(intMonth, intDay, intYear) == false) || (checkIfMonthIsCorrect(intMonth) == false) || (checkIfYearIsCorrect(intYear) == false)||(checkIfDateIsLaterThanToday(dateToCheck) == false))
         isCorrect = false;
     return isCorrect;
 }
@@ -107,30 +98,30 @@ bool Date::checkIfMonthHasCorrectDaysNumber (int month, int days, int year)
         if (month == monthsWith31days[i])
         {
             if (days > 31)
-        {
-            areDaysCorrect = false;
-            return areDaysCorrect;
+            {
+                areDaysCorrect = false;
+                return areDaysCorrect;
+            }
         }
     }
-}
 
-for (int i=0; i < 4; i++)
+    for (int i=0; i < 4; i++)
     {
         if (month == monthsWith30days[i])
         {
             if (days > 30)
-        {
-            areDaysCorrect = false;
-            return areDaysCorrect;
+            {
+                areDaysCorrect = false;
+                return areDaysCorrect;
+            }
         }
     }
-}
 
-if ((month == februaryMonth) && (checkIfYearIsBissextile(year))== true)
+    if ((month == februaryMonth) && (checkIfYearIsBissextile(year))== true)
     {
         if (days > 29)
         {
-                areDaysCorrect = false;
+            areDaysCorrect = false;
             return areDaysCorrect;
         }
     }
@@ -138,8 +129,8 @@ if ((month == februaryMonth) && (checkIfYearIsBissextile(year))== true)
     {
         if (days > 28)
         {
-         areDaysCorrect = false;
-        return areDaysCorrect;
+            areDaysCorrect = false;
+            return areDaysCorrect;
         }
     }
     return areDaysCorrect;
@@ -173,20 +164,11 @@ bool Date::checkIfYearIsBissextile(int year)
         return false;
 }
 
-
-bool Date::compareDates(Finance date1,Finance date2)
+bool Date::checkIfDateIsLaterThanToday (int dateToCheck)
 {
-    return date1.getDate() < date2.getDate();
-//    string stringDate1, stringDate2;
-//    stringDate1 = AccessoryMethods::convertIntToString(date1);
-//    stringDate2 = AccessoryMethods::convertIntToString(date2);
-//
-//    for (int j=0; j < 8; j++)
-//    {
-//       if (stringDate1[j] != stringDate2[j])
-//       {
-//           return compareDates = false;
-//       }
-//    }
-//    return compareDates;
+     int actualDate = retrieveActualDate();
+     if (dateToCheck > actualDate)
+        return false;
+     else
+        return true;
 }

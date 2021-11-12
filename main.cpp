@@ -83,15 +83,21 @@ int main() {
 ExpensesManager expensesManager("expenses.xml", 2);
 expensesManager.sortExpenses();
 expensesManager.showVectorElements();
+
 vector <Expense> expensesFromCurrentMonth;
 expensesFromCurrentMonth = expensesManager.chooseExpensesFromCurrentMonth();
 cout << "------------------" << endl;
 AccessoryMethods::showAllVectorElements(expensesFromCurrentMonth);
+
 vector <Expense> expensesFromPreviousMonth;
 expensesFromPreviousMonth = expensesManager.chooseExpensesFromPrevioustMonth();
 cout << "--------------------" << endl;
 AccessoryMethods::showAllVectorElements(expensesFromPreviousMonth);
 
+vector <Expense> expensesFromChoosenPeriod;
+expensesFromChoosenPeriod = expensesManager.chooseExpensesFromChosenPeriod();
+cout << "--------------------" << endl;
+AccessoryMethods::showAllVectorElements(expensesFromChoosenPeriod);
 
 
 

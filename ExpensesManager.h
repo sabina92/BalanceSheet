@@ -27,6 +27,8 @@ class ExpensesManager
  Expense giveNewExpenseData(int intDate);
  int giveTheActualMonth();
  int giveTheActualYear();
+ int checkPeriodDate (int dateToCheck);
+ int convertCustomerDateToInt(string dateDescribe);
 
 public:
     ExpensesManager(string nameOfFileWithExpenses, int loggedInUserId) : xmlFileWithExpenses (nameOfFileWithExpenses), LOGGED_IN_USER_ID(loggedInUserId) {
