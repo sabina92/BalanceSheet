@@ -172,3 +172,122 @@ bool Date::checkIfDateIsLaterThanToday (int dateToCheck)
      else
         return true;
 }
+
+int Date::giveTheActualMonth()
+{
+    Date date;
+    int actualMonth = 0, actualDate = 0;
+    actualDate = date.retrieveActualDate();
+    actualMonth = date.giveMonthFromDate(actualDate);
+
+    return actualMonth;
+}
+
+int Date::giveTheActualYear()
+{
+    Date date;
+    int actualYear = 0, actualDate = 0;
+    actualDate = date.retrieveActualDate();
+    actualYear = date.giveYearFromDate(actualDate);
+
+    return actualYear;
+}
+
+int *Date::askCustomerAboutDate()
+{
+    int *intDate;
+    int newDate = 0;
+    string givenDate = "", dateWithoutDashes = "";
+    cout << "If you want to add the today's date, write: YES. If not, give your date" << endl;
+    givenDate = AccessoryMethods::loadLine();
+
+    if (givenDate == "YES")
+    {
+        newDate = retrieveActualDate();
+        cout << newDate << endl;
+        intDate = &newDate;
+        return intDate;
+        delete intDate;
+    }
+    else
+    {
+        dateWithoutDashes = AccessoryMethods::deletingDashesFromDate(givenDate);
+
+        int intDate2 = AccessoryMethods::convertStringToInt(dateWithoutDashes);
+        intDate = &intDate2;
+
+        if(!checkIfDateIsCorrect(intDate2))
+        {
+            cout << "You gave the wrong date. Please, give the date once again. You have 3 chances." << endl;
+            for (int chanceAmount = 3; chanceAmount > 0; chanceAmount--)
+            {
+                cout << "Give the date. There are " << chanceAmount << " chances. ";
+                givenDate = AccessoryMethods::loadLine();
+                dateWithoutDashes = AccessoryMethods::deletingDashesFromDate(givenDate);
+                intDate2 = AccessoryMethods::convertStringToInt(dateWithoutDashes);
+
+                if (checkIfDateIsCorrect(intDate2) )
+                {
+                    return intDate;
+                    delete intDate;
+                }
+            }
+            cout << "You entered the wrong date 3 times." << endl;
+            system("pause");
+            intDate = 0;
+            return intDate;
+            delete intDate;
+        }
+        return intDate;
+        delete intDate;
+    }
+}
+
+int Date::convertCustomerDateToInt(string dateDescribe)
+{
+    int customerDate = 0;
+    string stringCustomerDate = "", customerDateWithoutDashes = "";
+
+    AccessoryMethods::askTheCustomer(dateDescribe);
+    stringCustomerDate = AccessoryMethods::loadLine();
+    customerDateWithoutDashes = AccessoryMethods::deletingDashesFromDate(stringCustomerDate);
+    customerDate = AccessoryMethods::convertStringToInt(customerDateWithoutDashes);
+    return customerDate;
+}
+
+int Date::checkPeriodDate (int dateToCheck)
+{
+    bool dateCheck = checkIfDateIsCorrect(dateToCheck);
+    if (dateCheck == true)
+        return 1;
+    else
+        return 0;
+}
+
+int Date::askCustomerAboutStartDate()
+{
+    int customerStartDate = 0;
+    string initialDescibe = "the initial date for the finance period: ";
+
+    customerStartDate = convertCustomerDateToInt(initialDescibe);
+    while (!checkPeriodDate(customerStartDate))
+    {
+        cout << "You gave the wrong date. Please, give the correct date: " << endl;
+        customerStartDate = convertCustomerDateToInt(initialDescibe);
+    }
+    return customerStartDate;
+}
+
+int Date::askCustomerAboutStopDate()
+{
+    int customerStopDate = 0;
+    string finalDescibe = "the final date for the finance period: ";
+
+    customerStopDate = convertCustomerDateToInt(finalDescibe);
+    while (!checkPeriodDate(customerStopDate))
+    {
+        cout << "You gave the wrong date. Please, give the correct date: " << endl;
+        customerStopDate = convertCustomerDateToInt(finalDescibe);
+    }
+    return customerStopDate;
+}

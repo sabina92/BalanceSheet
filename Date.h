@@ -28,7 +28,13 @@ public:
     int giveMonthFromDate (int wholeDate);
     int giveYearFromDate (int wholeDate);
     int giveDayFromDate (int wholeDate);
-
+    int giveTheActualMonth();
+    int giveTheActualYear();
+    int *askCustomerAboutDate();
+    int convertCustomerDateToInt(string dateDescribe);
+    int checkPeriodDate (int dateToCheck);
+    int askCustomerAboutStartDate();
+    int askCustomerAboutStopDate();
 
 };
 

@@ -8,6 +8,7 @@
 #include "AccessoryMethods.h"
 #include "Date.h"
 #include "ExpensesManager.h"
+#include "IncomesManager.h"
 
 #include "UserManager.h"
 
@@ -80,24 +81,24 @@ int main() {
 //userManager.registerUser();
 //userManager.logInUser();
 
-ExpensesManager expensesManager("expenses.xml", 2);
-expensesManager.sortExpenses();
-expensesManager.showVectorElements();
+IncomesManager incomesManager("incomes.xml", 2);
+incomesManager.sortIncomes();
+incomesManager.showVectorElements();
 
-vector <Expense> expensesFromCurrentMonth;
-expensesFromCurrentMonth = expensesManager.chooseExpensesFromCurrentMonth();
-cout << "------------------" << endl;
-AccessoryMethods::showAllVectorElements(expensesFromCurrentMonth);
-
-vector <Expense> expensesFromPreviousMonth;
-expensesFromPreviousMonth = expensesManager.chooseExpensesFromPrevioustMonth();
-cout << "--------------------" << endl;
-AccessoryMethods::showAllVectorElements(expensesFromPreviousMonth);
-
-vector <Expense> expensesFromChoosenPeriod;
-expensesFromChoosenPeriod = expensesManager.chooseExpensesFromChosenPeriod();
-cout << "--------------------" << endl;
-AccessoryMethods::showAllVectorElements(expensesFromChoosenPeriod);
+//vector <Income> incomesFromCurrentMonth;
+//incomesFromCurrentMonth = incomesManager.chooseIncomesFromCurrentMonth();
+//cout << "------------------" << endl;
+//AccessoryMethods::showAllVectorElements2(incomesFromCurrentMonth);
+//
+//vector <Income> incomesFromPreviousMonth;
+//incomesFromPreviousMonth = incomesManager.chooseIncomesFromPrevioustMonth();
+//cout << "--------------------" << endl;
+//AccessoryMethods::showAllVectorElements2(incomesFromPreviousMonth);
+//
+//vector <Income> incomesFromChoosenPeriod;
+//incomesFromChoosenPeriod = incomesManager.chooseIncomesFromChosenPeriod();
+//cout << "--------------------" << endl;
+//AccessoryMethods::showAllVectorElements2(incomesFromChoosenPeriod);
 
 
 

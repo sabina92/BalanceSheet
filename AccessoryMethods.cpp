@@ -13,6 +13,15 @@
         cout << allElements[k].getDate() << '-' << allElements[k].getItem() << '-' << allElements[k].getAmount() << endl;
     }
 }
+
+ void AccessoryMethods::showAllVectorElements2(vector <Income> allElements)
+{
+    for (int k=0; k< allElements.size(); k++)
+    {
+        cout << allElements[k].getDate() << '-' << allElements[k].getItem() << '-' << allElements[k].getAmount() << endl;
+    }
+}
+
  int AccessoryMethods::calculateTheSum(vector <Finance> allElements)
 {
     int suma;

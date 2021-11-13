@@ -19,30 +19,26 @@ class ExpensesManager
 {
     const int LOGGED_IN_USER_ID;
     vector <Expense> allExpenses;
- vector <Expense> expensesFromCurrentMonth;
- vector <Expense> expensesFromPrevioustMonth;
- vector <Expense> expensesFromChosenPeriod;
- XMLFileWithExpense xmlFileWithExpenses;
+    vector <Expense> expensesFromCurrentMonth;
+    vector <Expense> expensesFromPrevioustMonth;
+    vector <Expense> expensesFromChosenPeriod;
+    XMLFileWithExpense xmlFileWithExpenses;
 
- Expense giveNewExpenseData(int intDate);
- int giveTheActualMonth();
- int giveTheActualYear();
- int checkPeriodDate (int dateToCheck);
- int convertCustomerDateToInt(string dateDescribe);
+    Expense giveNewExpenseData(int intDate);
 
 public:
-    ExpensesManager(string nameOfFileWithExpenses, int loggedInUserId) : xmlFileWithExpenses (nameOfFileWithExpenses), LOGGED_IN_USER_ID(loggedInUserId) {
-allExpenses = xmlFileWithExpenses.loadExpenses(LOGGED_IN_USER_ID);
+    ExpensesManager(string nameOfFileWithExpenses, int loggedInUserId) : xmlFileWithExpenses (nameOfFileWithExpenses), LOGGED_IN_USER_ID(loggedInUserId)
+    {
+        allExpenses = xmlFileWithExpenses.loadExpenses(LOGGED_IN_USER_ID);
     };
 
     void addExpense();
-   void sortExpenses();
+    void sortExpenses();
     void showVectorElements();
     vector <Expense> getVector();
     vector <Expense> chooseExpensesFromCurrentMonth();
     vector <Expense> chooseExpensesFromPrevioustMonth();
-    vector <Expense> chooseExpensesFromChosenPeriod();
-     int *checkDate();
+    vector <Expense> chooseExpensesFromChosenPeriod(int customerStartDate, int customerStopDate);
 
 
 };

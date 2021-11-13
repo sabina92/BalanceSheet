@@ -17,6 +17,10 @@ class Income : public Finance
     string incomeAmount;
 
 public:
+    static bool comp( const Income & l, const Income & r )
+{
+    return l.getDate() < r.getDate();
+}
 
 };
 
