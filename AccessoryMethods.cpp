@@ -22,15 +22,6 @@
     }
 }
 
- int AccessoryMethods::calculateTheSum(vector <Finance> allElements)
-{
-    int suma;
-    for (int l=0; l< allElements.size(); l++)
-    {
-        suma += convertStringToInt(allElements[l].getAmount());
-    }
-    return suma;
-}
  int AccessoryMethods::calculateTheDifference(int firstSum, int secondSum)
 {
     int difference;

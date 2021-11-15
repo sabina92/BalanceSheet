@@ -22,7 +22,6 @@ static string changePointToComa(string amount);
 static void askTheCustomer(string option);
 static void showAllVectorElements(vector <Expense> allElements);
 static void showAllVectorElements2(vector <Income> allElements);
-static int calculateTheSum(vector <Finance> allElements);
 static int calculateTheDifference(int firstSum, int secondSum);
 static string convertIntToStringWithDash(int number);
 static string convertIntToString(int number);
