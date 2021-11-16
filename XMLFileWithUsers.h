@@ -22,7 +22,7 @@ public:
     void saveUserToXMLFile(User user, int lastUserId);
     vector <User> loadUsers();
     void saveAllUsersToXMLFile(vector <User> users);
-
+    void changeUserPassword(User user);
 
 };
 

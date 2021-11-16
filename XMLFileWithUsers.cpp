@@ -74,6 +74,38 @@ vector <User> XMLFileWithUsers::loadUsers()
     return users;
 }
 
+void XMLFileWithUsers::changeUserPassword(User user)
+{
+     CMarkup xmlFileUser;
+  bool fileExists = xmlFileUser.Load("users.xml" );
+
+  cout << user.getPassword() << endl;
+    if (!fileExists)
+    {
+        xmlFileUser.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
+        xmlFileUser.AddElem("Users");
+    }
+
+    xmlFileUser.FindElem();
+    xmlFileUser.IntoElem();
+    while ( xmlFileUser.FindElem("User") )
+    {
+        xmlFileUser.IntoElem();
+        xmlFileUser.FindElem("UserId");
+        MCD_STR strrId = xmlFileUser.GetData();
+        cout << (atoi(MCD_2PCSZ(strrId))) << endl;
+        if (atoi(MCD_2PCSZ(strrId)) == user.getId())
+        {
+            xmlFileUser.FindElem("Password");
+            xmlFileUser.RemoveElem();
+            xmlFileUser.AddElem("Password", user.getPassword());
+            xmlFileUser.Save("users.xml");
+            break;
+        }
+            xmlFileUser.OutOfElem();
+    }
+}
+
 void XMLFileWithUsers::saveAllUsersToXMLFile(vector <User> users)
 {
     CMarkup xmlFileUser;

@@ -18,16 +18,13 @@ using namespace std;
 class ExpensesManager
 {
     const int LOGGED_IN_USER_ID;
-    vector <Expense> allExpenses;
-    vector <Expense> expensesFromCurrentMonth;
-    vector <Expense> expensesFromPrevioustMonth;
-    vector <Expense> expensesFromChosenPeriod;
     XMLFileWithExpense xmlFileWithExpenses;
+    vector <Expense> allExpenses;
 
     Expense giveNewExpenseData(int intDate);
 
 public:
-    ExpensesManager(string nameOfFileWithExpenses, int loggedInUserId) : xmlFileWithExpenses (nameOfFileWithExpenses), LOGGED_IN_USER_ID(loggedInUserId)
+    ExpensesManager(string nameOfFileWithExpenses, int loggedInUserId) : xmlFileWithExpenses(nameOfFileWithExpenses), LOGGED_IN_USER_ID(loggedInUserId)
     {
         allExpenses = xmlFileWithExpenses.loadExpenses(LOGGED_IN_USER_ID);
     };

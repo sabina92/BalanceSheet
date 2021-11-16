@@ -75,13 +75,14 @@ int Date::giveDayFromDate (int wholeDate)
 bool Date::checkIfDateIsCorrect(int dateToCheck)
 {
     bool isCorrect = true;
-    int intDay, intMonth, intYear, actualYear;
+    int intDay = 0, intMonth = 0, intYear = 0, actualYear = 0;
     intDay = giveDayFromDate(dateToCheck);
     intMonth = giveMonthFromDate(dateToCheck);
     intYear = giveYearFromDate(dateToCheck);
 
     if ((checkIfMonthHasCorrectDaysNumber(intMonth, intDay, intYear) == false) || (checkIfMonthIsCorrect(intMonth) == false) || (checkIfYearIsCorrect(intYear) == false)||(checkIfDateIsLaterThanToday(dateToCheck) == false))
         isCorrect = false;
+
     return isCorrect;
 }
 
@@ -177,8 +178,8 @@ int Date::giveTheActualMonth()
 {
     Date date;
     int actualMonth = 0, actualDate = 0;
-    actualDate = date.retrieveActualDate();
-    actualMonth = date.giveMonthFromDate(actualDate);
+    actualDate = retrieveActualDate();
+    actualMonth = giveMonthFromDate(actualDate);
 
     return actualMonth;
 }
@@ -187,8 +188,8 @@ int Date::giveTheActualYear()
 {
     Date date;
     int actualYear = 0, actualDate = 0;
-    actualDate = date.retrieveActualDate();
-    actualYear = date.giveYearFromDate(actualDate);
+    actualDate = retrieveActualDate();
+    actualYear = giveYearFromDate(actualDate);
 
     return actualYear;
 }
@@ -198,13 +199,12 @@ int *Date::askCustomerAboutDate()
     int *intDate;
     int newDate = 0;
     string givenDate = "", dateWithoutDashes = "";
-    cout << "If you want to add the today's date, write: YES. If not, give your date" << endl;
+    cout << "If you want to add the today's date, write: YES. If not, give your date (year-month-day): " << endl;
     givenDate = AccessoryMethods::loadLine();
 
     if (givenDate == "YES")
     {
         newDate = retrieveActualDate();
-        cout << newDate << endl;
         intDate = &newDate;
         return intDate;
         delete intDate;
@@ -243,19 +243,17 @@ int *Date::askCustomerAboutDate()
     }
 }
 
-int Date::convertCustomerDateToInt(string dateDescribe)
+int Date::convertCustomerDateToInt(string customerChoice)
 {
     int customerDate = 0;
-    string stringCustomerDate = "", customerDateWithoutDashes = "";
+    string customerDateWithoutDashes = "";
 
-    AccessoryMethods::askTheCustomer(dateDescribe);
-    stringCustomerDate = AccessoryMethods::loadLine();
-    customerDateWithoutDashes = AccessoryMethods::deletingDashesFromDate(stringCustomerDate);
+    customerDateWithoutDashes = AccessoryMethods::deletingDashesFromDate(customerChoice);
     customerDate = AccessoryMethods::convertStringToInt(customerDateWithoutDashes);
     return customerDate;
 }
 
-int Date::checkPeriodDate (int dateToCheck)
+int Date::checkPeriodDate (int &dateToCheck)
 {
     bool dateCheck = checkIfDateIsCorrect(dateToCheck);
     if (dateCheck == true)
@@ -267,13 +265,18 @@ int Date::checkPeriodDate (int dateToCheck)
 int Date::askCustomerAboutStartDate()
 {
     int customerStartDate = 0;
+    string customerChoice = "";
     string initialDescibe = "the initial date for the finance period: ";
 
-    customerStartDate = convertCustomerDateToInt(initialDescibe);
+    cout << "Please, write " << initialDescibe << endl;
+    cin >> customerChoice;
+
+    customerStartDate = convertCustomerDateToInt(customerChoice);
     while (!checkPeriodDate(customerStartDate))
     {
         cout << "You gave the wrong date. Please, give the correct date: " << endl;
-        customerStartDate = convertCustomerDateToInt(initialDescibe);
+        cin >> customerChoice;
+        customerStartDate = convertCustomerDateToInt(customerChoice);
     }
     return customerStartDate;
 }
@@ -281,13 +284,18 @@ int Date::askCustomerAboutStartDate()
 int Date::askCustomerAboutStopDate()
 {
     int customerStopDate = 0;
+    string customerChoice = "";
     string finalDescibe = "the final date for the finance period: ";
 
-    customerStopDate = convertCustomerDateToInt(finalDescibe);
+    cout << "Please, write " << finalDescibe << endl;
+    cin >> customerChoice;
+
+    customerStopDate = convertCustomerDateToInt(customerChoice);
     while (!checkPeriodDate(customerStopDate))
     {
         cout << "You gave the wrong date. Please, give the correct date: " << endl;
-        customerStopDate = convertCustomerDateToInt(finalDescibe);
+            cin >> customerChoice;
+        customerStopDate = convertCustomerDateToInt(customerChoice);
     }
     return customerStopDate;
 }

@@ -5,6 +5,7 @@
 #include "XMLFile.h"
 #include "Income.h"
 #include "Markup.h"
+#include "AccessoryMethods.h"
 
 using namespace std;
 

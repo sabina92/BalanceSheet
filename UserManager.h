@@ -17,20 +17,20 @@ class UserManager
     int loggedInUserId;
     vector <User> users;
     XMLFileWithUsers xmlFileWithUsers;
+    int lastUserId;
 
     User giveDataOfNewUser();
     int downloadNewUserId();
     bool showIfTheLoginExists(string login);
-    int lastUserId;
+    void saveAllUsersToFile();
 
 public:
     UserManager(string nameOfFileWithUsers) : xmlFileWithUsers (nameOfFileWithUsers) {
     loggedInUserId = 0;
     users = xmlFileWithUsers.loadUsers();
     };
-    void registerUser();
+    void userRegister();
     void changeLoggedInUserPassword();
-    void saveAllUsersToFile();
     int logInUser();
     void logOutUser();
     int downloadTheLoggedInUserId();

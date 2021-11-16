@@ -9,6 +9,7 @@
 #include "Date.h"
 #include "ExpensesManager.h"
 #include "IncomesManager.h"
+#include "FinanceCalculator.h"
 
 #include "UserManager.h"
 
@@ -43,17 +44,17 @@ int main() {
 
     vector <User> users;
 
-    XMLFileWithUsers xmlFileUser("Users.xml");
-    users = xmlFileUser.loadUsers();
+//    XMLFileWithUsers xmlFileUser("Users.xml");
+//    users = xmlFileUser.loadUsers();
 
 //    for (int i =0; i<users.size(); i++)
 //    {
 //        cout << i << users[i].getPassword() << endl;
 //    }
 
-    vector <Expense> expenses;
-
-    XMLFileWithExpense xmlFileWithExpense("Expenses.xml");
+//    vector <Expense> expenses;
+//
+//    XMLFileWithExpense xmlFileWithExpense("Expenses.xml");
 
 
 //    for (int i =0; i<expenses.size(); i++)
@@ -81,9 +82,9 @@ int main() {
 //userManager.registerUser();
 //userManager.logInUser();
 
-IncomesManager incomesManager("incomes.xml", 2);
-incomesManager.sortIncomes();
-incomesManager.showVectorElements();
+//IncomesManager incomesManager("incomes.xml", 2);
+//incomesManager.sortIncomes();
+//incomesManager.showVectorElements();
 
 //vector <Income> incomesFromCurrentMonth;
 //incomesFromCurrentMonth = incomesManager.chooseIncomesFromCurrentMonth();
@@ -100,7 +101,8 @@ incomesManager.showVectorElements();
 //cout << "--------------------" << endl;
 //AccessoryMethods::showAllVectorElements2(incomesFromChoosenPeriod);
 
-
+    FinanceCalculator financeCalculator("users.xml", "expenses.xml", "incomes.xml");
+   financeCalculator.showMainMenu();
 
     return 0;
 }

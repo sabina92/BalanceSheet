@@ -18,11 +18,8 @@ using namespace std;
 class IncomesManager
 {
     const int LOGGED_IN_USER_ID;
-    vector <Income> allIncomes;
-    vector <Income> incomesFromCurrentMonth;
-    vector <Income> incomesFromPrevioustMonth;
-    vector <Income> incomesFromChosenPeriod;
     XMLFileWithIncomes xmlFileWithIncomes;
+    vector <Income> allIncomes;
 
     Income giveNewIncomeData(int intDate);
 

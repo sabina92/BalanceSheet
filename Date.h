@@ -31,8 +31,8 @@ public:
     int giveTheActualMonth();
     int giveTheActualYear();
     int *askCustomerAboutDate();
-    int convertCustomerDateToInt(string dateDescribe);
-    int checkPeriodDate (int dateToCheck);
+int convertCustomerDateToInt(string customerChoice);
+    int checkPeriodDate (int &dateToCheck);
     int askCustomerAboutStartDate();
     int askCustomerAboutStopDate();
 

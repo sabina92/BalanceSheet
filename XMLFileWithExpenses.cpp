@@ -2,6 +2,7 @@
 
 bool XMLFileWithExpense::saveExpenseToXMLFile(Expense expense)
 {
+    string stringDateWithDashes = "";
     CMarkup xmlFileExpense;
     bool fileExists = xmlFileExpense.Load("expenses.xml" );
 
@@ -30,13 +31,12 @@ bool XMLFileWithExpense::saveExpenseToXMLFile(Expense expense)
     xmlFileExpense.IntoElem();
     xmlFileExpense.AddElem("ExpenseId", to_string(expense.getFinanceId()));
     xmlFileExpense.AddElem("ExpenseUserId", to_string(expense.getUserId()));
-    xmlFileExpense.AddElem("ExpenseDate", to_string(expense.getDate()));
+    stringDateWithDashes = AccessoryMethods::convertIntToStringWithDash(expense.getDate());
+    xmlFileExpense.AddElem("ExpenseDate", stringDateWithDashes);
     xmlFileExpense.AddElem("ExpenseItem", expense.getItem());
     xmlFileExpense.AddElem("ExpenseAmount", expense.getAmount());
 
-    cout << "1" << endl;
     xmlFileExpense.Save("expenses.xml");
-    cout << "2" << endl;
     idOfLastExpense++;
     return true;
 }
