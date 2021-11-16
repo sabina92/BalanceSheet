@@ -35,4 +35,11 @@
 <IncomeItem>kuchnia</IncomeItem>
 <IncomeAmount>3000</IncomeAmount>
 </Income>
+<Income>
+<IncomeId>6</IncomeId>
+<IncomeUserId>5</IncomeUserId>
+<IncomeDate>2021-11-16</IncomeDate>
+<IncomeItem>CAR</IncomeItem>
+<IncomeAmount>2000</IncomeAmount>
+</Income>
 </Incomes>
