@@ -2,6 +2,7 @@
 
 bool XMLFileWithIncomes::saveIncomeToXMLFile(Income income)
 {
+    string stringDateWithDashes = "";
     CMarkup xmlFileIncome;
     bool fileExists = xmlFileIncome.Load("incomes.xml" );
 
@@ -30,13 +31,12 @@ bool XMLFileWithIncomes::saveIncomeToXMLFile(Income income)
     xmlFileIncome.IntoElem();
     xmlFileIncome.AddElem("IncomeId", to_string(income.getFinanceId()));
     xmlFileIncome.AddElem("IncomeUserId", to_string(income.getUserId()));
-    xmlFileIncome.AddElem("IncomeDate", to_string(income.getDate()));
+    stringDateWithDashes = AccessoryMethods::convertIntToStringWithDash(income.getDate());
+    xmlFileIncome.AddElem("IncomeDate", stringDateWithDashes);
     xmlFileIncome.AddElem("IncomeItem", income.getItem());
     xmlFileIncome.AddElem("IncomeAmount", income.getAmount());
 
-    cout << "1" << endl;
     xmlFileIncome.Save("incomes.xml");
-    cout << "2" << endl;
     idOfLastIncome++;
     return true;
 }
@@ -99,10 +99,10 @@ int XMLFileWithIncomes::downloadLastIncomeId()
     xmlFileIncome.FindElem();
     xmlFileIncome.IntoElem();
 
-    while (xmlFileIncome.FindElem("income"))
+    while (xmlFileIncome.FindElem("Income"))
     {
         xmlFileIncome.IntoElem();
-        xmlFileIncome.FindElem("incomeId");
+        xmlFileIncome.FindElem("IncomeId");
         MCD_STR strrId = xmlFileIncome.GetData();
         lastIncomeId = (atoi(MCD_2PCSZ(strrId)));
         xmlFileIncome.OutOfElem();

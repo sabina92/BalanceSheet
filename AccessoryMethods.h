@@ -7,6 +7,8 @@
 #include <cctype>
 #include <locale>
 #include <vector>
+#include <algorithm>
+
 #include "Finance.h"
 #include "Expense.h"
 #include "Income.h"
@@ -19,16 +21,16 @@ class AccessoryMethods{
 public:
 
 static string changePointToComa(string amount);
-static void askTheCustomer(string option);
-static void showAllVectorElements(vector <Expense> allElements);
-static void showAllVectorElements2(vector <Income> allElements);
+static string askTheCustomer(string option);
 static int calculateTheDifference(int firstSum, int secondSum);
 static string convertIntToStringWithDash(int number);
 static string convertIntToString(int number);
 static int convertStringToInt(string number);
 static string deletingDashesFromDate(string date);
-
-
+static void sortIncomes(vector <Income> incomes);
+static void sortExpenses(vector <Expense> expenses);
+static void showIncomeVectorElements(vector <Income> incomes);
+static void showExpenseVectorElements(vector <Expense> expenses);
 static string loadLine();
 
 };

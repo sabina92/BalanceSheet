@@ -3,9 +3,6 @@
 
 #include <iostream>
 #include <vector>
-#include <windows.h>
-#include <cstdlib>
-#include <algorithm>
 
 #include "Expense.h"
 #include "Income.h"

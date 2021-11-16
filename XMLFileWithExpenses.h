@@ -2,10 +2,13 @@
 #define XMLFILEWITHEXPENSE_H
 
 #include <iostream>
+#include <vector>
+
+#include "AccessoryMethods.h"
 #include "Expense.h"
 #include "XMLFile.h"
 #include "Markup.h"
-#include <vector>
+
 
 using namespace std;
 

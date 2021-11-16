@@ -13,7 +13,6 @@ void IncomesManager::addIncome()
     income = giveNewIncomeData(intDate);
 
     allIncomes.push_back(income);
-    cout << xmlFileWithIncomes.downloadLastIncomeId() << endl;
     if (xmlFileWithIncomes.saveIncomeToXMLFile(income))
         cout << "New income was added." << endl;
     else

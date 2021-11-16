@@ -18,9 +18,9 @@ void BalanceSheet::showBalanceSheet(vector <Expense> choosenExpenses, vector <In
     financeDifference = sumOfIncomes - sumOfExpenses;
 
     if (financeDifference >= 0)
-        cout << "In " << balanceSheetPeriod <<" you generated " << financeDifference << "PLN savings." << endl;
+        cout << endl << "In " << balanceSheetPeriod <<" you generated " << financeDifference << "PLN savings." << endl;
     else
-        cout << "In " << balanceSheetPeriod <<" you generated " << -financeDifference << "PLN debt." << endl;
+        cout << endl << "In " << balanceSheetPeriod <<" you generated " << -financeDifference << "PLN debt." << endl;
 }
 
 

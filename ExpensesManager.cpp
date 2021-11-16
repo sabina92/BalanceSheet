@@ -13,7 +13,6 @@ void ExpensesManager::addExpense()
     expense = giveNewExpenseData(intDate);
 
     allExpenses.push_back(expense);
-    cout << xmlFileWithExpenses.downloadLastExpenseId() << endl;
     if (xmlFileWithExpenses.saveExpenseToXMLFile(expense))
         cout << "New expense was added." << endl;
     else
@@ -44,20 +43,6 @@ Expense ExpensesManager::giveNewExpenseData(int intDate)
     return expense;
 }
 
-
-void ExpensesManager::sortExpenses()
-{
-    sort(allExpenses.begin(), allExpenses.end(),Expense::comp);
-}
-
-void ExpensesManager::showVectorElements()
-{
-
-    for (int k=0; k< allExpenses.size(); k++)
-    {
-        cout << allExpenses[k].getDate() << '-' << allExpenses[k].getItem() << '-' << allExpenses[k].getAmount() << endl;
-    }
-}
 
 vector <Expense> ExpensesManager::chooseExpensesFromCurrentMonth()
 {
@@ -108,10 +93,12 @@ vector <Expense> ExpensesManager::chooseExpensesFromPrevioustMonth()
     return expensesFromPreviousMonth;
 }
 
+
 vector <Expense> ExpensesManager::chooseExpensesFromChosenPeriod(int customerStartDate, int customerStopDate)
 {
     Date date;
     vector <Expense> expensesFromChoosenPeriod;
+
 
     for (int j = 0; j < allExpenses.size(); j++)
     {
