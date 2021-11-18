@@ -9,7 +9,9 @@ void ExpensesManager::addExpense()
     system("cls");
     cout << " >>> ADDING NEW EXPENSE <<<" << endl << endl;
 
-    intDate = *date.askCustomerAboutDate();
+    intDate = date.askCustomerAboutDate();
+    if (intDate == 0)
+        return;
     expense = giveNewExpenseData(intDate);
 
     allExpenses.push_back(expense);

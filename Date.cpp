@@ -194,9 +194,8 @@ int Date::giveTheActualYear()
     return actualYear;
 }
 
-int *Date::askCustomerAboutDate()
+int Date::askCustomerAboutDate()
 {
-    int *intDate;
     int newDate = 0;
     string givenDate = "", dateWithoutDashes = "";
     cout << "If you want to add the today's date, write: YES. If not, give your date (year-month-day): " << endl;
@@ -204,17 +203,13 @@ int *Date::askCustomerAboutDate()
 
     if (givenDate == "YES")
     {
-        newDate = retrieveActualDate();
-        intDate = &newDate;
-        return intDate;
-        delete intDate;
+       return newDate = retrieveActualDate();
     }
     else
     {
         dateWithoutDashes = AccessoryMethods::deletingDashesFromDate(givenDate);
 
         int intDate2 = AccessoryMethods::convertStringToInt(dateWithoutDashes);
-        intDate = &intDate2;
 
         if(!checkIfDateIsCorrect(intDate2))
         {
@@ -226,20 +221,16 @@ int *Date::askCustomerAboutDate()
                 dateWithoutDashes = AccessoryMethods::deletingDashesFromDate(givenDate);
                 intDate2 = AccessoryMethods::convertStringToInt(dateWithoutDashes);
 
-                if (checkIfDateIsCorrect(intDate2) )
+                if (checkIfDateIsCorrect(intDate2))
                 {
-                    return intDate;
-                    delete intDate;
+                    return intDate2;
                 }
             }
             cout << "You entered the wrong date 3 times." << endl;
             system("pause");
-            intDate = 0;
-            return intDate;
-            delete intDate;
+            return 0;
         }
-        return intDate;
-        delete intDate;
+        return intDate2;
     }
 }
 

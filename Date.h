@@ -30,7 +30,7 @@ public:
     int giveDayFromDate (int wholeDate);
     int giveTheActualMonth();
     int giveTheActualYear();
-    int *askCustomerAboutDate();
+    int askCustomerAboutDate();
 int convertCustomerDateToInt(string customerChoice);
     int checkPeriodDate (int &dateToCheck);
     int askCustomerAboutStartDate();

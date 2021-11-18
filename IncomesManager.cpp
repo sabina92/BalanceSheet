@@ -9,7 +9,9 @@ void IncomesManager::addIncome()
     system("cls");
     cout << " >>> ADDING NEW INCOME <<<" << endl << endl;
 
-    intDate = *date.askCustomerAboutDate();
+    intDate = date.askCustomerAboutDate();
+    if (intDate == 0)
+    return;
     income = giveNewIncomeData(intDate);
 
     allIncomes.push_back(income);

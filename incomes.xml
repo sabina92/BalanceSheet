@@ -42,4 +42,11 @@
 <IncomeItem>CAR</IncomeItem>
 <IncomeAmount>2000</IncomeAmount>
 </Income>
+<Income>
+<IncomeId>7</IncomeId>
+<IncomeUserId>4</IncomeUserId>
+<IncomeDate>0</IncomeDate>
+<IncomeItem/>
+<IncomeAmount/>
+</Income>
 </Incomes>
