@@ -9,7 +9,9 @@ void IncomesManager::addIncome()
     system("cls");
     cout << " >>> ADDING NEW INCOME <<<" << endl << endl;
 
-    intDate = *date.askCustomerAboutDate();
+    intDate = date.askCustomerAboutDate();
+    if (intDate == 0)
+    return;
     income = giveNewIncomeData(intDate);
 
     allIncomes.push_back(income);
@@ -41,21 +43,6 @@ Income IncomesManager::giveNewIncomeData(int intDate)
     income.setAmount(incomeAmount);
 
     return income;
-}
-
-
-void IncomesManager::sortIncomes()
-{
-    sort(allIncomes.begin(), allIncomes.end(),Income::comp);
-}
-
-void IncomesManager::showVectorElements()
-{
-
-    for (int k=0; k< allIncomes.size(); k++)
-    {
-        cout << allIncomes[k].getDate() << '-' << allIncomes[k].getItem() << '-' << allIncomes[k].getAmount() << endl;
-    }
 }
 
 vector <Income> IncomesManager::chooseIncomesFromCurrentMonth()
@@ -120,8 +107,22 @@ vector <Income> IncomesManager::chooseIncomesFromChosenPeriod(int customerStartD
     return incomesFromChoosenPeriod;
 }
 
-
 vector <Income> IncomesManager::getVector()
 {
     return allIncomes;
+}
+
+void IncomesManager::showIncomeVectorElements(vector <Income> incomes)
+{
+    string dateWithDashes = "";
+    for (int k=0; k< incomes.size(); k++)
+    {
+        dateWithDashes = AccessoryMethods::convertIntToStringWithDash(incomes[k].getDate());
+        cout << dateWithDashes << '-' << incomes[k].getItem() << '-' << incomes[k].getAmount() << endl;
+    }
+}
+
+void IncomesManager::sortIncomes(vector <Income> &incomes)
+{
+    sort(incomes.begin(), incomes.end(),Income::comp);
 }

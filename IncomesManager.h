@@ -30,14 +30,12 @@ public:
     };
 
     void addIncome();
-    void sortIncomes();
-    void showVectorElements();
+    void sortIncomes(vector <Income> &incomes);
     vector <Income> getVector();
     vector <Income> chooseIncomesFromCurrentMonth();
     vector <Income> chooseIncomesFromPrevioustMonth();
     vector <Income> chooseIncomesFromChosenPeriod(int customerStartDate, int customerStopDate);
-
-
+    void showIncomeVectorElements(vector <Income> incomes);
 };
 
 #endif

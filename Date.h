@@ -15,24 +15,24 @@ class Date
 {
     int date;
     struct tm *giveActualDate();
-    bool checkIfYearIsBissextile (int year);
-    bool checkIfYearIsCorrect (int year);
-    bool checkIfMonthIsCorrect (int month);
-    bool checkIfMonthHasCorrectDaysNumber (int month, int days, int year);
-    bool checkIfDateIsLaterThanToday (int dateToCheck);
+    bool yearIsBissextile (int year);
+    bool yearIsCorrect (int year);
+    bool monthIsCorrect (int month);
+    bool monthHasCorrectDaysNumber (int month, int days, int year);
+    bool dateIsNotLaterThanToday (int dateToCheck);
 
 public:
 
     int retrieveActualDate();
-    bool checkIfDateIsCorrect(int dateToCheck);
+    bool dateIsCorrect(int &dateToCheck);
     int giveMonthFromDate (int wholeDate);
     int giveYearFromDate (int wholeDate);
     int giveDayFromDate (int wholeDate);
     int giveTheActualMonth();
     int giveTheActualYear();
-    int *askCustomerAboutDate();
-int convertCustomerDateToInt(string customerChoice);
-    int checkPeriodDate (int &dateToCheck);
+    int askCustomerAboutDate();
+    int convertCustomerDateToInt(string customerChoice);
+    int periodDateIsCorrect (int &dateToCheck);
     int askCustomerAboutStartDate();
     int askCustomerAboutStopDate();
 

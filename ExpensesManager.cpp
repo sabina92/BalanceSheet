@@ -9,7 +9,9 @@ void ExpensesManager::addExpense()
     system("cls");
     cout << " >>> ADDING NEW EXPENSE <<<" << endl << endl;
 
-    intDate = *date.askCustomerAboutDate();
+    intDate = date.askCustomerAboutDate();
+    if (intDate == 0)
+        return;
     expense = giveNewExpenseData(intDate);
 
     allExpenses.push_back(expense);
@@ -111,4 +113,19 @@ vector <Expense> ExpensesManager::chooseExpensesFromChosenPeriod(int customerSta
 vector <Expense> ExpensesManager::getVector()
 {
     return allExpenses;
+}
+
+void ExpensesManager::showExpenseVectorElements(vector <Expense> expenses)
+{
+    string dateWithDashes = "";
+    for (int k=0; k< expenses.size(); k++)
+    {
+        dateWithDashes = AccessoryMethods::convertIntToStringWithDash(expenses[k].getDate());
+        cout << dateWithDashes << '-' << expenses[k].getItem() << '-' << expenses[k].getAmount() << endl;
+    }
+}
+
+void ExpensesManager::sortExpenses(vector <Expense> &expenses)
+{
+    sort(expenses.begin(), expenses.end(),Expense::comp);
 }

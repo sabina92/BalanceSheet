@@ -44,9 +44,10 @@ bool XMLFileWithExpense::saveExpenseToXMLFile(Expense expense)
 vector <Expense> XMLFileWithExpense::loadExpenses(int loggedInUserId)
 {
     CMarkup xmlFileExpense;
-    xmlFileExpense.Load( nameOfTemporaryXMLFileWithExpenses );
+    xmlFileExpense.Load("expenses.xml" );
     Expense expense;
     vector <Expense> expenses;
+    string dateWithoutDashes ="";
     xmlFileExpense.ResetPos();
 
     xmlFileExpense.FindElem();
@@ -67,21 +68,18 @@ vector <Expense> XMLFileWithExpense::loadExpenses(int loggedInUserId)
             expense.setUserId(atoi(MCD_2PCSZ(strUserId)));
             xmlFileExpense.FindElem("ExpenseDate");
             MCD_STR strExpenseDate = xmlFileExpense.GetData();
-            expense.setDate(atoi(MCD_2PCSZ(strExpenseDate)));
+            dateWithoutDashes = AccessoryMethods::deletingDashesFromDate(strExpenseDate);
+            expense.setDate(atoi(dateWithoutDashes.c_str()));
             xmlFileExpense.FindElem("ExpenseItem");
             MCD_STR strExpenseItem = xmlFileExpense.GetData();
             expense.setItem(strExpenseItem);
             xmlFileExpense.FindElem("ExpenseAmount");
             MCD_STR strExpenseAmount= xmlFileExpense.GetData();
             expense.setAmount(strExpenseAmount);
-
             expenses.push_back(expense);
         }
-
         xmlFileExpense.OutOfElem();
-
     }
-
     return expenses;
 }
 

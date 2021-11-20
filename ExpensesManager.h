@@ -23,6 +23,7 @@ class ExpensesManager
 
     Expense giveNewExpenseData(int intDate);
 
+
 public:
     ExpensesManager(string nameOfFileWithExpenses, int loggedInUserId) : xmlFileWithExpenses(nameOfFileWithExpenses), LOGGED_IN_USER_ID(loggedInUserId)
     {
@@ -30,13 +31,12 @@ public:
     };
 
     void addExpense();
-    void sortExpenses();
-    void showVectorElements();
+    void sortExpenses(vector <Expense> &expenses);
     vector <Expense> getVector();
     vector <Expense> chooseExpensesFromCurrentMonth();
     vector <Expense> chooseExpensesFromPrevioustMonth();
     vector <Expense> chooseExpensesFromChosenPeriod(int customerStartDate, int customerStopDate);
-
+    void showExpenseVectorElements(vector <Expense> expenses);
 
 };
 
