@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <windows.h>
 
 #include "AccessoryMethods.h"
 #include "Expense.h"
@@ -14,7 +15,6 @@ using namespace std;
 
 class XMLFileWithExpense : public XMLFile
 {
-string nameOfTemporaryXMLFileWithExpenses = "expenses.xml";
 int idOfLastExpense;
 
 

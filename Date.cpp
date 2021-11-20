@@ -22,6 +22,7 @@ int Date::retrieveActualDate()
 
     wholeActualDate = AccessoryMethods::convertIntToString(actualTime->tm_year + 1900)+AccessoryMethods::convertIntToString(actualTime->tm_mon + 1)+AccessoryMethods::convertIntToString(actualTime->tm_mday);
 
+    delete actualTime;
     return AccessoryMethods::convertStringToInt(wholeActualDate);
 }
 
@@ -72,106 +73,53 @@ int Date::giveDayFromDate (int wholeDate)
     return intDay;
 }
 
-bool Date::checkIfDateIsCorrect(int dateToCheck)
+bool Date::dateIsCorrect(int &dateToCheck)
 {
-    bool isCorrect = true;
     int intDay = 0, intMonth = 0, intYear = 0, actualYear = 0;
     intDay = giveDayFromDate(dateToCheck);
     intMonth = giveMonthFromDate(dateToCheck);
     intYear = giveYearFromDate(dateToCheck);
 
-    if ((checkIfMonthHasCorrectDaysNumber(intMonth, intDay, intYear) == false) || (checkIfMonthIsCorrect(intMonth) == false) || (checkIfYearIsCorrect(intYear) == false)||(checkIfDateIsLaterThanToday(dateToCheck) == false))
-        isCorrect = false;
-
-    return isCorrect;
+    return (!((monthHasCorrectDaysNumber(intMonth, intDay, intYear) == false) || (monthIsCorrect(intMonth) == false) || (yearIsCorrect(intYear) == false)||(dateIsNotLaterThanToday(dateToCheck) == false)));
 }
 
-bool Date::checkIfMonthHasCorrectDaysNumber (int month, int days, int year)
+bool Date::monthHasCorrectDaysNumber (int month, int days, int year)
 {
-    bool areDaysCorrect = true;
 
-    int monthsWith31days[8] = {1,3,5,7,8,10,12};
-    int monthsWith30days[4] = {4,6,9,11};
-    int februaryMonth = 2;
+    if (((month <= 7) && (month%2 == 1))||(((month) >7)&&(month%2 == 0)))
+        return (days <= 31);
 
-    for (int i=0; i < 7; i++)
-    {
-        if (month == monthsWith31days[i])
-        {
-            if (days > 31)
-            {
-                areDaysCorrect = false;
-                return areDaysCorrect;
-            }
-        }
-    }
+    if (((month == 4)||(month == 6))||((month >8)&&(month%2 == 1)))
+        return (days <= 30);
 
-    for (int i=0; i < 4; i++)
-    {
-        if (month == monthsWith30days[i])
-        {
-            if (days > 30)
-            {
-                areDaysCorrect = false;
-                return areDaysCorrect;
-            }
-        }
-    }
+    if ((month == 2) && (yearIsBissextile(year))== true)
+        return (days <= 29);
 
-    if ((month == februaryMonth) && (checkIfYearIsBissextile(year))== true)
-    {
-        if (days > 29)
-        {
-            areDaysCorrect = false;
-            return areDaysCorrect;
-        }
-    }
-    if ((month == februaryMonth) && (checkIfYearIsBissextile(year))== false)
-    {
-        if (days > 28)
-        {
-            areDaysCorrect = false;
-            return areDaysCorrect;
-        }
-    }
-    return areDaysCorrect;
+    if ((month == 2) && (yearIsBissextile(year))== false)
+        return (days <= 28);
 }
 
-bool Date::checkIfMonthIsCorrect (int month)
+bool Date::monthIsCorrect (int month)
 {
-    bool isMonthCorrect = true;
-    if ((month < 1) || (month > 12))
-        isMonthCorrect = false;
-
-    return isMonthCorrect;
+    return ((month >= 1) && (month <= 12));
 }
 
-bool Date::checkIfYearIsCorrect (int year)
+bool Date::yearIsCorrect (int year)
 {
     int actualYear = giveYearFromDate(retrieveActualDate());
-    bool isYearCorrect = true;
 
-    if ((year > actualYear)|| (year < 1900))
-        isYearCorrect = false;
-
-    return isYearCorrect;
+    return ((year <= actualYear)|| (year >= 1900));
 }
 
-bool Date::checkIfYearIsBissextile(int year)
+bool Date::yearIsBissextile(int year)
 {
-    if (((year%4 == 0)&& (year%100 != 0)) || (year%400 == 0))
-        return true;
-    else
-        return false;
+    return (((year%4 == 0)&& (year%100 != 0)) || (year%400 == 0));
 }
 
-bool Date::checkIfDateIsLaterThanToday (int dateToCheck)
+bool Date::dateIsNotLaterThanToday (int dateToCheck)
 {
      int actualDate = retrieveActualDate();
-     if (dateToCheck > actualDate)
-        return false;
-     else
-        return true;
+     return (dateToCheck <= actualDate);
 }
 
 int Date::giveTheActualMonth()
@@ -211,7 +159,7 @@ int Date::askCustomerAboutDate()
 
         int intDate2 = AccessoryMethods::convertStringToInt(dateWithoutDashes);
 
-        if(!checkIfDateIsCorrect(intDate2))
+        if(!dateIsCorrect(intDate2))
         {
             cout << "You gave the wrong date. Please, give the date once again. You have 3 chances." << endl;
             for (int chanceAmount = 3; chanceAmount > 0; chanceAmount--)
@@ -221,7 +169,7 @@ int Date::askCustomerAboutDate()
                 dateWithoutDashes = AccessoryMethods::deletingDashesFromDate(givenDate);
                 intDate2 = AccessoryMethods::convertStringToInt(dateWithoutDashes);
 
-                if (checkIfDateIsCorrect(intDate2))
+                if (dateIsCorrect(intDate2))
                 {
                     return intDate2;
                 }
@@ -244,13 +192,10 @@ int Date::convertCustomerDateToInt(string customerChoice)
     return customerDate;
 }
 
-int Date::checkPeriodDate (int &dateToCheck)
+int Date::periodDateIsCorrect (int &dateToCheck)
 {
-    bool dateCheck = checkIfDateIsCorrect(dateToCheck);
-    if (dateCheck == true)
-        return 1;
-    else
-        return 0;
+    bool dateCheck = dateIsCorrect(dateToCheck);
+    return (dateCheck) ? 1 : 0;
 }
 
 int Date::askCustomerAboutStartDate()
@@ -263,7 +208,7 @@ int Date::askCustomerAboutStartDate()
     cin >> customerChoice;
 
     customerStartDate = convertCustomerDateToInt(customerChoice);
-    while (!checkPeriodDate(customerStartDate))
+    while (!periodDateIsCorrect(customerStartDate))
     {
         cout << "You gave the wrong date. Please, give the correct date: " << endl;
         cin >> customerChoice;
@@ -282,7 +227,7 @@ int Date::askCustomerAboutStopDate()
     cin >> customerChoice;
 
     customerStopDate = convertCustomerDateToInt(customerChoice);
-    while (!checkPeriodDate(customerStopDate))
+    while (!periodDateIsCorrect(customerStopDate))
     {
         cout << "You gave the wrong date. Please, give the correct date: " << endl;
             cin >> customerChoice;

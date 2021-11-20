@@ -44,9 +44,10 @@ bool XMLFileWithIncomes::saveIncomeToXMLFile(Income income)
 vector <Income> XMLFileWithIncomes::loadIncomes(int loggedInUserId)
 {
     CMarkup xmlFileIncome;
-    xmlFileIncome.Load( nameOfTemporaryXMLFileWithIncomes );
+    xmlFileIncome.Load("incomes.xml" );
     Income income;
     vector <Income> incomes;
+    string dateWithoutDashes = "";
     xmlFileIncome.ResetPos();
 
     xmlFileIncome.FindElem();
@@ -67,7 +68,8 @@ vector <Income> XMLFileWithIncomes::loadIncomes(int loggedInUserId)
             income.setUserId(atoi(MCD_2PCSZ(strUserId)));
             xmlFileIncome.FindElem("IncomeDate");
             MCD_STR strIncomeDate = xmlFileIncome.GetData();
-            income.setDate(atoi(MCD_2PCSZ(strIncomeDate)));
+            dateWithoutDashes = AccessoryMethods::deletingDashesFromDate(strIncomeDate);
+            income.setDate(atoi(dateWithoutDashes.c_str()));
             xmlFileIncome.FindElem("IncomeItem");
             MCD_STR strIncomeItem = xmlFileIncome.GetData();
             income.setItem(strIncomeItem);
@@ -79,9 +81,7 @@ vector <Income> XMLFileWithIncomes::loadIncomes(int loggedInUserId)
         }
 
         xmlFileIncome.OutOfElem();
-
     }
-
     return incomes;
 }
 

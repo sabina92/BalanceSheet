@@ -1,28 +1,15 @@
 #include "AccessoryMethods.h"
 
-
- int AccessoryMethods::calculateTheDifference(int firstSum, int secondSum)
-{
-    int difference;
-    return difference = firstSum - secondSum;
-}
-
-
  string AccessoryMethods::convertIntToString(int number)
 {
-    ostringstream ss;
-    ss << number;
-    string str = ss.str();
-    return str;
+    string strNumber = to_string(number );
+    return strNumber;
 }
 
  int AccessoryMethods::convertStringToInt(string number)
 {
-    int numberInt;
-    istringstream iss(number);
-    iss >> numberInt;
-
-    return numberInt;
+    int intNumber = atoi(number.c_str());
+    return intNumber;
 }
 
  string AccessoryMethods::convertIntToStringWithDash(int number)
@@ -87,32 +74,3 @@ string AccessoryMethods::deletingDashesFromDate(string date)
     return newDate;
 }
 
-void AccessoryMethods::sortExpenses(vector <Expense> expenses)
-{
-    sort(expenses.begin(), expenses.end(),Expense::comp);
-}
-
-void AccessoryMethods::sortIncomes(vector <Income> incomes)
-{
-    sort(incomes.begin(), incomes.end(),Income::comp);
-}
-
-void AccessoryMethods::showExpenseVectorElements(vector <Expense> expenses)
-{
-    string dateWithDashes = "";
-    for (int k=0; k< expenses.size(); k++)
-    {
-        dateWithDashes = convertIntToStringWithDash(expenses[k].getDate());
-        cout << dateWithDashes << '-' << expenses[k].getItem() << '-' << expenses[k].getAmount() << endl;
-    }
-}
-
-void AccessoryMethods::showIncomeVectorElements(vector <Income> incomes)
-{
-    string dateWithDashes = "";
-    for (int k=0; k< incomes.size(); k++)
-    {
-        dateWithDashes = convertIntToStringWithDash(incomes[k].getDate());
-        cout << dateWithDashes << '-' << incomes[k].getItem() << '-' << incomes[k].getAmount() << endl;
-    }
-}

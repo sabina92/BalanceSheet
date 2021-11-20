@@ -38,14 +38,14 @@ void FinanceCalculator::showBalanceSheetFromCurrentMonth()
     vector <Income> incomes;
 
     incomes = incomesManager->chooseIncomesFromCurrentMonth();
-    AccessoryMethods::sortIncomes(incomes);
+    incomesManager->sortIncomes(incomes);
     cout << "There are incomes from current month: " << endl;
-    AccessoryMethods::showIncomeVectorElements(incomes);
+    incomesManager->showIncomeVectorElements(incomes);
 
     expenses = expensesManager->chooseExpensesFromCurrentMonth();
-    AccessoryMethods::sortExpenses(expenses);
+    expensesManager->sortExpenses(expenses);
     cout << "There are expenses from current month: " << endl;
-    AccessoryMethods::showExpenseVectorElements(expenses);
+    expensesManager->showExpenseVectorElements(expenses);
 
     balanceSheet.showBalanceSheet(expenses, incomes, "current month");
     system("pause");
@@ -57,14 +57,14 @@ void FinanceCalculator::showBalanceSheetFromPreviousMonth()
     vector <Income> incomes;
 
     incomes = incomesManager->chooseIncomesFromPrevioustMonth();
-    AccessoryMethods::sortIncomes(incomes);
-    cout << "There are incomes from current month: " << endl;
-    AccessoryMethods::showIncomeVectorElements(incomes);
+    incomesManager->sortIncomes(incomes);
+    cout << "There are incomes from previous month: " << endl;
+    incomesManager->showIncomeVectorElements(incomes);
 
     expenses = expensesManager->chooseExpensesFromPrevioustMonth();
-    AccessoryMethods::sortExpenses(expenses);
-    cout << "There are expenses from current month: " << endl;
-    AccessoryMethods::showExpenseVectorElements(expenses);
+    expensesManager->sortExpenses(expenses);
+    cout << "There are expenses from previous month: " << endl;
+    expensesManager->showExpenseVectorElements(expenses);
 
     balanceSheet.showBalanceSheet(expenses, incomes, "previous month");
     system("pause");
@@ -80,14 +80,14 @@ void FinanceCalculator::showBalanceSheetFromChoosenPeriod()
     customerStartDate = date.askCustomerAboutStartDate();
     customerStopDate = date.askCustomerAboutStopDate();
     incomes = incomesManager->chooseIncomesFromChosenPeriod(customerStartDate, customerStopDate);
-    AccessoryMethods::sortIncomes(incomes);
+    incomesManager->sortIncomes(incomes);
     cout << "There are incomes from chosen month: "  << endl;
-    AccessoryMethods::showIncomeVectorElements(incomes);
+    incomesManager->showIncomeVectorElements(incomes);
 
     expenses = expensesManager->chooseExpensesFromChosenPeriod(customerStartDate, customerStopDate);;
-    AccessoryMethods::sortExpenses(expenses);
+    expensesManager->sortExpenses(expenses);
     cout << "There are expenses from chosen month: " << endl;
-    AccessoryMethods::showExpenseVectorElements(expenses);
+    expensesManager->showExpenseVectorElements(expenses);
 
     balanceSheet.showBalanceSheet(expenses, incomes, "chosen period");
     system("pause");

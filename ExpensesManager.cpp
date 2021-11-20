@@ -114,3 +114,18 @@ vector <Expense> ExpensesManager::getVector()
 {
     return allExpenses;
 }
+
+void ExpensesManager::showExpenseVectorElements(vector <Expense> expenses)
+{
+    string dateWithDashes = "";
+    for (int k=0; k< expenses.size(); k++)
+    {
+        dateWithDashes = AccessoryMethods::convertIntToStringWithDash(expenses[k].getDate());
+        cout << dateWithDashes << '-' << expenses[k].getItem() << '-' << expenses[k].getAmount() << endl;
+    }
+}
+
+void ExpensesManager::sortExpenses(vector <Expense> &expenses)
+{
+    sort(expenses.begin(), expenses.end(),Expense::comp);
+}
