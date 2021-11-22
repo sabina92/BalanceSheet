@@ -87,7 +87,7 @@
 1637446869 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\incomesmanager.cpp
 	"IncomesManager.h"
 
-1637447479 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
+1637573842 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\main.cpp
 	<time.h>
 	<conio.h>
 	<iostream>
@@ -103,7 +103,7 @@
 	"FinanceCalculator.h"
 	"UserManager.h"
 
-1637446869 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
+1637573993 source:c:\users\sabin\desktop\codeblocks- programy\bilansfinansow\usermanager.cpp
 	"UserManager.h"
 
 1636372619 er.h"

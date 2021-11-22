@@ -19,10 +19,6 @@ using namespace std;
 
 int main()
 {
-
-    cout << AccessoryMethods::convertIntToString(5) << endl;
-    cout << AccessoryMethods::convertStringToInt("5") << endl;
-    system("pause");
     FinanceCalculator financeCalculator("users.xml", "expenses.xml", "incomes.xml");
     financeCalculator.showMainMenu();
 

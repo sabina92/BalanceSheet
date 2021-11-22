@@ -68,14 +68,12 @@ void UserManager::changeLoggedInUserPassword()
 
      for (int i = 0; i < users.size(); i++)
     {
-        cout << users[i].getId() << endl;
         if (users[i].getId() == loggedInUserId)
         {
             cout << "Give the new password: ";
             newPassword = accessoryMethods.loadLine();
             users[i].setPassword(newPassword);
             cout << "The password was changed." << endl << endl;
-            cout << users[i].getPassword() << endl;
             xmlFileWithUsers.changeUserPassword(users[i]);
             system("pause");
         }
